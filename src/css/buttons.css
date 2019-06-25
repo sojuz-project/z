@@ -1,0 +1,94 @@
+a.underline{
+  text-decoration: none;
+  position: relative;
+}
+a.underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 1px;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  transform-origin: 0 0;
+}
+a.underline:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+a.underline.nuxt-link-active{
+  text-decoration: underline;
+}
+
+.button__bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
+  font-family: Montserrat;
+  font-weight: 900;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+  background: #333;
+  color: #fff;
+  padding: 0.6em 2.7em 0.46em 0.85em;
+  z-index: 2;
+  text-decoration: blink;
+  overflow: hidden;
+}
+
+.button__bold:after {
+  position: absolute;
+  content: '';
+  width: 1.9em;
+  height: 100%;
+  background-color: #8B8F99;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.button__bold:before {
+  position: absolute;
+  content: url('../assets/arrow-right.svg');
+  font-size: 0.0em;
+  top: 33%;
+  right: 8%;
+  z-index: 1;
+  animation-name: move-icon-to-left;
+  width: 10%;
+  fill: #fff;
+}
+
+.button__bold:hover:before {
+  animation-name: move-icon-to-right;
+  animation-duration: 0.3s;
+}
+
+@keyframes move-icon-to-right {
+  0% {right: 12px; z-index: 1;}
+  45% {right: -35px; z-index: 1;}
+  47% {right: -35px; z-index: -1;}
+  48% {right: 30px; z-index: -1;}
+  50% {right: 30px; z-index: 1;}
+  100% {right: 12px; z-index: 1;}
+}
+
+@keyframes move-icon-to-left {
+  0% {right: 12px; z-index: 1;}
+  45% {right: 30px; z-index: 1;}
+  47% {right: 30px; z-index: -1;}
+  48% {right: -35px; z-index: -1;}
+  50% {right: -35px; z-index: 1;}
+  100% {right: 12px; z-index: 1;}
+}
+

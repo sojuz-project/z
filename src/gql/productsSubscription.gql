@@ -1,0 +1,8 @@
+subscription stockState($products: [Int!]!) {
+  stock_state(products: $products) {
+    product_id
+    quantity
+    status
+    locked
+  }
+}

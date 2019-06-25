@@ -1,0 +1,13 @@
+query Post(
+  $id:Int
+  ){
+  post(
+    id: $id
+    )
+    {
+      blocks{
+        attrs
+        blockName
+      }
+    }
+}

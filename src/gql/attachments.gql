@@ -1,0 +1,13 @@
+query Attachments(
+  $ids:[Int!]!
+)
+{
+attachments(
+  ids: $ids
+  )
+  {
+    id
+    src
+    sizes
+  }
+}

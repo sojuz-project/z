@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  frontend:
+    image: node:${NODE_VERSION}
+    working_dir: "/app"
+    networks: 
+      - web
+    environment: 
+      - "NODE_ENV=${ENVIRONMENT}"
+      - "SOCKET_URL=wss://${HOST}/socket"
+      - "GRAPH_URL=https://${HOST}/graphql"
+    volumes:
+      - ./src:/app
+    restart: unless-stopped
+    command: bash -c "yarn && yarn run start"
+    labels:
+      - "traefik.frontend.rule=Host:${HOST};"
+      - "traefik.port=3000"
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.passHostHeader=true"
+      - "traefik.frontend.entryPoints=http,https"
+      - "traefik.tags=${HOST}"
+networks: 
+  web:
+    external: true

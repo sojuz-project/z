@@ -1,0 +1,17 @@
+query Menus(
+  $name:String!
+)
+{
+menus(
+  name: $name
+  )
+  {
+    items {
+      navitem {
+        post_name
+        post_title
+        id
+      }
+    }
+  }
+}

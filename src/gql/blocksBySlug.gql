@@ -1,0 +1,13 @@
+query Post(
+  $slug:String
+  ){
+  post(
+    name: $slug
+    )
+    {
+      blocks{
+        attrs
+        blockName
+      }
+    }
+}

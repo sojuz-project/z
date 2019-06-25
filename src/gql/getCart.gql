@@ -1,0 +1,3 @@
+query {
+  get_cart
+}

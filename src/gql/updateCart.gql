@@ -1,0 +1,3 @@
+mutation update_cart($productId: Int!, $quantity: Int!) {
+  update_cart(item: { product_id: $productId, quantity: $quantity })
+}
