@@ -1,6 +1,6 @@
 # Zero-theme for sojuz project
 
-This is the frontend/theme component for the SOJUZ Project. It utilizes GraphQL API provided by Junction.
+This is the frontend/theme component for the SOJUZ Project. It utilizes GraphQL API provided by [Junction](https://github.com/sojuz-project/ju).
 
 ## Setup
  1. Make sure that you have defiend docker network `web`
