@@ -1,0 +1,21 @@
+/* Main grid properties */
+.block-content-section.default-revers {
+  grid-template-areas:
+    ". content-image-dr content-image-dr ."
+    ". content-excerpt-dr content-excerpt-dr ."
+    ". content-title-dr content-title-dr ."
+    ". content-content-dr content-content-dr .";
+    grid-template-columns: auto 27vw 27vw auto;
+}
+.block-content-section.default-revers .entry-title {
+  grid-area: content-title-dr;
+}
+.block-content-section.default-revers .entry-thumbnail {
+  grid-area: content-image-dr;
+}
+.block-content-section.default-revers .entry-excerpt {
+  grid-area: content-excerpt-dr;
+}
+.block-content-section.default-revers .entry-content {
+  grid-area: content-content-dr;
+}

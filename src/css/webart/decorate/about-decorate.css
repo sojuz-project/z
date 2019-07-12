@@ -1,0 +1,71 @@
+/* _____________ */
+/* About section */
+.block-about-section{
+  padding-bottom: 120em
+}
+.block-about-section .back{
+  font-size: 46em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}
+.block-about-section .back img{
+  height:0.81em
+}
+.block-about-section .title{
+  font-size: 136em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  padding: 0em 0 1.3em
+}
+.block-about-section .image{
+  font-size: 20em; 
+  margin-left:-20%;
+}
+.block-about-section .bg-head{
+  background: linear-gradient(0deg, #fff 80px,#ffffff00 80px);
+}
+.block-about-section .image img{
+  width: 100%;
+}
+.block-about-section .subtitle{
+  font-size: 100em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  margin: 0.6em 0 0.3em;
+  color: #30333C;
+}
+.block-about-section .entry-excerpt{
+  font-size: 50em;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.5em;
+  margin: 0.3em 0 0.5em;
+}
+.block-about-section .content{
+  font-size: 40em;
+  margin: 0.4em 0 0.4em;
+  line-height: 1.45em;
+  color: #30333C;
+}
+.block-about-section > div:nth-child(3n){
+  background: #fff;
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 360px) {
+  .block-about-section .back{
+    font-size: 26em;
+    margin-left:-30%;
+  }
+  .block-about-section .image{  
+    margin-left:-60%;
+    margin-right: 20%;
+  }
+  .block-about-section .title{
+    margin-left:-30%;
+    font-size: 70em; 
+  }
+  .block-about-section .subtitle{
+    font-size: 50em; 
+  }
+}

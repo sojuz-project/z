@@ -10,7 +10,7 @@
    version="1.1"
    viewBox="0 0 1000 1000"
    id="svg846"
-   sodipodi:docname="arrow-right.svg"
+   sodipodi:docname="arrow-left.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata852">
@@ -20,6 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -50,5 +51,6 @@
      id="path844"
      style="fill:#ffffff"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccccccc" />
+     sodipodi:nodetypes="cccccccccccc"
+     transform="matrix(-1,0,0,1,984,0)" />
 </svg>

@@ -1,0 +1,34 @@
+/* Properties */
+.block-properties-section{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". properties-title ."
+    ". properties-list .";
+}
+.block-properties-section .title {
+  grid-area: properties-title;
+  justify-self: center;
+}
+.block-properties-section .list {
+  grid-area: properties-list;
+}
+
+/* Proportions */
+.block-properties-section{
+  grid-template-columns:  auto 67% auto;
+}
+
+/* mobile global padding */
+@media only screen and (max-width : 768px) {
+  .block-properties-section {
+    padding: 120em 40em;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  .block-properties-section{
+    grid-template-columns:  auto 61% auto;
+  }
+}

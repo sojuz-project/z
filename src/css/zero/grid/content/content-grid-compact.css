@@ -1,0 +1,19 @@
+/* Main grid properties */
+.block-content-section.compact {
+  grid-template-areas:
+    ". content-title-c content-image-c ."
+		". content-excerpt-c content-image-c ."
+		". content-excerpt-c content-content-c .";
+}
+.block-content-section.compact .entry-title {
+  grid-area: content-title-c;
+}
+.block-content-section.compact .entry-thumbnail {
+  grid-area: content-image-c;
+}
+.block-content-section.compact .entry-excerpt {
+  grid-area: content-excerpt-c;
+}
+.block-content-section.compact .entry-content {
+  grid-area: content-content-c;
+}

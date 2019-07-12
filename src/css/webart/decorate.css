@@ -1,0 +1,47 @@
+html { 
+  scroll-behavior: smooth;
+}
+section{
+  visibility: hidden;
+}
+.thumbnail{
+  width: 100%;
+}
+
+/* custom */
+.custom-input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+.custom-button {
+  padding: 10px;
+  border-radius: 4px;
+  background: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  color: white;
+  cursor: pointer;
+  transition: box-shadow 180ms;
+}
+
+.custom-button:hover {
+  box-shadow: 0 5px 10px -4px cornflowerblue;
+}
+
+.custom-button:disabled {
+  opacity: 0.6;
+}
+
+.custom-button_red {
+  background: #e43f2e;
+  border: 1px solid #e43f2e;
+}
+
+.custom-button_red:hover {
+  box-shadow: 0 5px 10px -4px #e43f2e;
+}
+
+.custom-button:disabled:hover {
+  box-shadow: none;
+}

@@ -1,0 +1,16 @@
+/* ____________ */
+/* Imaginate section */
+.block-imaginate-section{
+  padding: 180em 0;
+}
+.block-imaginate-section .content{
+    font-size: 40em;
+    margin: 2em 0 0.4em;
+    line-height: 1.5em;
+}
+.block-imaginate-section .image{
+  font-size: 20em; 
+}
+.block-imaginate-section .image img{
+  width: 100%;
+}

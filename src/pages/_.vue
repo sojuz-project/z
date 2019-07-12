@@ -1,5 +1,5 @@
 <template>
-  <div id="page">
+  <div id="page" :class="{'subpage':($route.path !== '/')}">
     <Header/>
     <h1
       v-if="options && options.option_value == 0"
@@ -7,14 +7,14 @@
     >
       Set any WP page as "home" in admin panes
     </h1>
-    <BlocksListByID
+    <BlocksList
       v-if="options && options.option_value != 0 && $route.path === '/'"
-      :id="parseInt(options.option_value)"
+      :query-params="{ id: parseInt(options.option_value) }"
       class="site-content"
     />
-    <BlocksListBySlug
+    <BlocksList
       v-if="$route.path !== '/'"
-      :slug="$route.path.substr(1)"
+      :query-params="{ slug: $route.path.substr(1) }"
       class="site-content"
     />
   </div>
@@ -22,15 +22,17 @@
 
 <script>
 import Header from '~/components/Header.vue'
-import BlocksListBySlug from '~/components/BlocksListBySlug.vue'
-import BlocksListByID from '~/components/BlocksListByID.vue'
+import BlocksList from '~/components/BlocksList.vue'
 import Options from '~/gql/options.gql'
 
 export default {
   components: {
     Header,
-    BlocksListBySlug,
-    BlocksListByID
+    BlocksList
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.$root.initialRoute = !!from
+    next()
   },
   apollo: {
     options: {

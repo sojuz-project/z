@@ -1,0 +1,39 @@
+#top-bar{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: ". main-logo main-menu .";
+}
+#top-bar .main-logo {
+  grid-area: main-logo;
+}
+#top-bar .main-menu {
+  grid-area: main-menu;
+}
+
+/* Proportions */
+#top-bar{
+  grid-template-columns: auto 10% 80% auto;
+}
+
+/* mobile global padding */
+@media only screen and (max-width : 768px) {
+  #top-bar {
+    padding: 80em 40em;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 768px) {
+    #top-bar {
+    grid-template-areas: "main-logo main-menu";
+    grid-template-columns:100px auto;
+    padding: 40em;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  #top-bar{
+    grid-template-columns: auto 12% 62% auto;
+  }
+}

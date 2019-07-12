@@ -1,0 +1,21 @@
+/* Main grid properties */
+.block-content-section.default {
+  grid-template-areas:
+    ". content-title-d content-title-d ."
+    ". content-image-d content-image-d ."
+    ". content-excerpt-d content-excerpt-d ."
+    ". content-content-d content-content-d .";
+  grid-template-columns: auto 27vw 27vw auto;
+}
+.block-content-section.default .entry-title {
+  grid-area: content-title-d;
+}
+.block-content-section.default .entry-thumbnail {
+  grid-area: content-image-d;
+}
+.block-content-section.default .entry-excerpt {
+  grid-area: content-excerpt-d;
+}
+.block-content-section.default .entry-content {
+  grid-area: content-content-d;
+}

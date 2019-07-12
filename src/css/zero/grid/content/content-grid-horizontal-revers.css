@@ -1,0 +1,19 @@
+/* Main grid properties */
+.block-content-section.horizontal-revers {
+  grid-template-areas:
+    ". content-title-hr content-title-hr ."
+		". content-content-hr content-image-hr ."
+		". content-content-hr content-excerpt-hr .";
+}
+.block-content-section.horizontal-revers .entry-title {
+  grid-area: content-title-hr;
+}
+.block-content-section.horizontal-revers .entry-thumbnail {
+  grid-area: content-image-hr;
+}
+.block-content-section.horizontal-revers .entry-excerpt {
+  grid-area: content-excerpt-hr;
+}
+.block-content-section.horizontal-revers .entry-content {
+  grid-area: content-content-hr;
+}

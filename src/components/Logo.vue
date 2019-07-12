@@ -1,38 +1,41 @@
 <template>
-  <nuxt-link to="/" >
+  <nuxt-link to="/">
     <div
-      v-if="options && options.option_value.custom_logo"
+      v-if="get_theme_mod && get_theme_mod.custom_logo"
       class="main-logo"
-      :style="{
-        'visibility': 'hidden'
-      }"
-      v-scroll-reveal="{ opacity: 0, delay:200 }"
     >
-      <img src="https://webartisan.itinfo.pl/backend/wp-content/uploads/2019/06/Webartisan-logo-1.svg" alt="main logo">
+      <img :src="get_theme_mod.custom_logo.src" alt="Main-logo" >
     </div>
   </nuxt-link>
 </template>
 
 <script>
-import Options from '~/gql/options.gql'
+// import Options from '~/gql/options.gql'
 // import Attachments from '~/gql/attachments.gql'
+import ThemeMods from '~/gql/themeMods.gql'
 export default {
   apollo: {
-    options: {
+    get_theme_mod: {
       variables: {
-        option_name: 'theme_mods_twentynineteen'
+        names: ['custom_logo']
       },
-      query: Options
-      // updated: opts => opts.option_value.custom_logo
+      query: ThemeMods
     }
+    // options: {
+    //   variables: {
+    //     option_name: 'theme_mods_zero'
+    //   },
+    //   query: Options
+    //   // updated: opts => opts.option_value.custom_logo
+    // },
     // attachments: {
     //   variables() {
     //     return {
-    //       ids: [this.apollo.data.options.option_value.custom_logo]
+    //       ids: [11]
     //     }
     //   },
-    //   query: Attachments,
-    //   skip() { return this.apollo && !this.apollo.data.options }
+    //   query: Attachments
+    //   // skip() { return this.apollo && !this.apollo.data.options }
     // }
   }
 }

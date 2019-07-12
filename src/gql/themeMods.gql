@@ -1,0 +1,8 @@
+query Options(
+  $names:[String!]!
+)
+{
+get_theme_mod(
+  names: $names
+  )
+}

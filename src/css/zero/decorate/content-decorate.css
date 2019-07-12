@@ -1,0 +1,33 @@
+/* _____________ */
+/* content section */
+
+/* entry Title */
+.block-content-section .entry-title{
+
+}
+/* entry Excerpt */
+.block-content-section .entry-excerpt{
+  font-size: 1.75em;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.35em;
+  margin-bottom: 1em;
+}
+/* entry Content */
+.block-content-section .entry-content{
+  font-size: 1.25em;
+  line-height: 1.45em;
+  margin-bottom: 1em;
+}
+/* entry Thumbnail */
+.block-content-section .entry-thumbnail{
+
+}
+.block-content-section .entry-thumbnail img{
+  max-width: 100%;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 360px) {
+ 
+}

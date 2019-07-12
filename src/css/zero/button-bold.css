@@ -1,0 +1,65 @@
+.button__bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+  position: relative;
+  font-family: Montserrat;
+  font-weight: 900;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+  background: #333;
+  color: #fff;
+  padding: 0.5em 2.5em 0.5em 0.8em;
+  z-index: 2;
+  text-decoration: blink;
+  overflow: hidden;
+}
+
+.button__bold:after {
+  position: absolute;
+  content: '';
+  width: 1.75em;
+  height: 100%;
+  background-color: #8B8F99;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.button__bold:before {
+  position: absolute;
+  content: url('../../assets/arrow-right.svg');
+  right: 0.6em;
+  width: 0.6em;
+  z-index: 1;
+  animation-name: move-icon-to-left;
+  animation-duration: 0.3s;
+  fill: #fff;
+}
+
+.button__bold:hover:before {
+  animation-name: move-icon-to-right;
+  animation-duration: 0.3s;
+}
+
+@keyframes move-icon-to-right {
+  0% {right: 0.6em; z-index: 1;}
+  45% {right: -0.5em; z-index: 1;}
+  47% {right: -0.5em; z-index: -1;}
+  48% {right: 1.35em; z-index: -1;}
+  50% {right: 1.35em; z-index: 1;}
+  100% {right: 0.6em; z-index: 1;}
+}
+
+@keyframes move-icon-to-left {
+  0% {right: 0.6em; z-index: 1;}
+  45% {right: 1.2em; z-index: 1;}
+  47% {right: 1.2em; opacity:0; z-index: -1;}
+  48% {right: -1em; opacity:0; z-index: -1;}
+  50% {right: -1em; z-index: 1;}
+  100% {right: 0.6em; z-index: 1;}
+}
+

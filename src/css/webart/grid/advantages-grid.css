@@ -1,0 +1,55 @@
+/* Advantages */
+.block-advantages-section{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". advantages-title . ."
+    ". advantages-list advantages-content ."
+    ". advantages-list advantages-images ."
+}
+.block-advantages-section .title {
+  grid-area: advantages-title;
+}
+.block-advantages-section .list {
+  grid-area: advantages-list;
+}
+.block-advantages-section .content {
+  grid-area: advantages-content;
+}
+.block-advantages-section .images {
+  grid-area: advantages-images;
+}
+.block-advantages-section  .first-footer {
+  grid-area: advantages-footer;
+  justify-self: center;
+}
+
+/* Proportions */
+.block-advantages-section{
+  grid-template-columns: auto 33.5% 33.5% auto;
+}
+
+/* mobile global padding */
+@media only screen and (max-width : 768px) {
+  .block-advantages-section {
+    padding: 50em 40em;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 768px) {
+  .block-advantages-section {
+    grid-template-areas:
+    "advantages-title advantages-title"
+    "advantages-list advantages-content"
+    "advantages-list advantages-images";
+    grid-template-columns: 35% auto;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  .block-advantages-section{
+    grid-template-columns: auto 25.5% 25.5% auto;
+  }
+}

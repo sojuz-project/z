@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../assets/SourceSansPro-Regular.woff2) format('woff2');
+  
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('SourceSansPro-Bold'), url(../../assets/SourceSansPro-Bold.woff2) format('woff2');
+  
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: fallback;
+  src: local('Montserrat-Black'), url(../../assets/Montserrat-Black.woff2) format('woff2');
+}

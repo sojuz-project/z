@@ -1,24 +1,28 @@
+.mouse-scroll-text{
+  text-align: center;
+  font-size:7px;
+  margin-bottom:1em;
+}
 .mouse-scroll-animaion__wrapper {
-    position: relative;
-    width: 0em;
-    margin-top: 0em;
-    margin-bottom: -2em;
-    display: block;
-    font-size: 20em;
-    color:#fff;
-    text-decoration: none;
-    text-align: center;
+  position: relative;
+  display: block;
+  transform: scale(0.65);
+  
+  text-decoration: none;
+  color:#fff;
+  text-align: center;
 }
 
 .mouse-scroll-animaion__wrapper:after {
   position: absolute;
   content: '';
+  /* width: 18.925px; */
   width: 18.925px;
   box-sizing: border-box;
   height: 35.667px;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  left: 7px;
+  left: 2px;
   animation: mouse-scroll-animation__mouse-after 2s infinite;
 }
 

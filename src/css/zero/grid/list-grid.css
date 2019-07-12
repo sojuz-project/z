@@ -1,0 +1,113 @@
+/* Properties */
+.block-list-section{
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". list-title list-title ."
+    ". list-list list-list .";
+}
+.block-list-section .entry-title {
+  grid-area: list-title;
+}
+.block-list-section .entry-list {
+  grid-area: list-list;
+}
+
+/* List elements */
+.block-list-section .entry-list .entry-title {
+  margin-bottom: 2em;
+  font-weight: bold;
+  font-size:1em;
+  line-height: 1.5em;
+}
+.block-list-section .entry-list .entry-content {
+  margin-bottom: 2em;
+  font-size:0.92em;
+  line-height:1.2em;
+}
+.block-list-section .entry-list .entry-thumbnail {
+  margin-bottom: 2em;
+}
+ 
+
+/* custom grids */
+
+/* default compact */
+.block-list-section.default-compact .entry-list li{
+  display: grid;
+  grid-gap: 2vw;
+  grid-template-rows: auto;
+  grid-template-columns:  33% auto;
+  grid-template-areas:
+    "element-thumb element-title"
+    "element-thumb element-content";
+  margin-bottom:2em;
+}
+.block-list-section.default-compact .entry-list .entry-title{
+  grid-area: element-title; 
+  font-size: 1.8em;
+  margin-bottom: 0.1em;
+}
+.block-list-section.default-compact .entry-list .entry-content{
+  grid-area: element-content; 
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+.block-list-section.default-compact .entry-list .entry-thumbnail{
+  grid-area: element-thumb; 
+}
+
+/* 2 columns */
+.block-list-section.horizontal-2 .entry-list{
+  display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+.block-list-section.horizontal-2 .entry-list .entry-title{
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+.block-list-section.horizontal-2 .entry-list .entry-content{
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
+/* 3 columns */
+.block-list-section.horizontal-3 .entry-list{
+  grid-gap: 10vw;
+  display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.block-list-section.horizontal-4 .entry-list{
+  grid-gap: 6vw;
+  display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+/* slider */
+
+/* Main grid properties */
+  .block-list-section.hero-slider {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". main-slider-title main-slider-images ."
+      ". main-slider-list main-slider-images ."
+      ". main-slider-call main-slider-images .";
+    grid-template-columns:  auto 40% 40% auto;
+
+  }
+  .block-list-section.hero-slider  .entry-title {
+    grid-area: main-slider-title;
+  }
+  .block-list-section.hero-slider  .entry-list {
+    grid-area: main-slider-list;
+  }
+  .block-list-section.hero-slider  .entry-slider {
+    grid-area: main-slider-images;
+  }
+  .block-list-section.hero-slider .entry-slider .slider{
+    width:100%;
+  }
+  .block-list-section.hero-slider .entry-slider img{
+    margin: 0 auto;
+    display: block;
+  }

@@ -1,0 +1,21 @@
+/* _______________________ */
+/* Top bar [logo and menu] */
+#top-bar{
+  height: 170em;
+  padding: 40em 0;
+  background-color: #E93558;
+}
+#top-bar .main-logo img{
+  width: 90em;
+}
+#top-bar .main-menu{
+  font-size: 22em;
+  display: flex;
+  justify-content: flex-end;
+}
+#top-bar .main-menu li{
+  margin-left: 3em;
+}
+#top-bar .main-menu li a{
+  color:#FFFFFF;
+}

@@ -1,0 +1,64 @@
+/* __________________ */
+/* Properties section */
+
+.block-properties-section{
+  padding: 120em 0;
+}
+.block-properties-section .back{
+  font-size:75em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  margin:1em 0 1.3em;
+}
+.block-properties-section .title{
+  font-size:75em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  margin:1em 0 1.3em;
+}
+.block-properties-section .list{
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 400;
+  display: grid;
+  grid-auto-flow: column;
+  font-size: 22em;
+  justify-content: space-between;
+  grid-template-columns: min-content;
+}
+.block-properties-section .list li{
+  display:flex;
+  flex-direction: column;
+}
+.block-properties-section .list img{
+  display: block;
+  margin: 0 auto 0.5em auto;
+  height:6.5em;
+}
+.block-properties-section .list .title{
+  margin:1em 0em;
+  font-weight: 600;
+  font-size:1.5em;
+  text-align: center;
+  height:2em;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 600;
+}
+.block-properties-section .list .content{
+  margin:1em 0em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 2em;
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 360px) {
+  .block-properties-section .list{
+    grid-auto-flow: initial;
+    grid-template-columns: repeat(auto-fit, 50%);
+  }
+  .block-properties-section .list .title{
+    margin:1em 0 0.3em;
+  }
+  .block-properties-section .list .content{
+    margin:0em 0em 1em;
+  }
+}

@@ -4,7 +4,11 @@
       v-for="(item, i) in menus.items"
       :key="i"
     >
-      <nuxt-link class="underline" :to="item.navitem.post_name">
+      <nuxt-link
+        class="underline"
+        :to="item.navitem.post_name"
+        :aria-label="`Read more about ${item.navitem.post_name}`"
+      >
         {{ item.navitem.post_title }}
       </nuxt-link>
     </li>

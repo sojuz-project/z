@@ -1,0 +1,42 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 768px) {
+  #page{
+    font-size: 0.03rem;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  #page{
+    font-size: 0.029rem;
+  }
+  #page section.entry{
+    grid-gap: 50em;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 1024px) {
+  #page{
+    font-size: 0.032rem;
+  }
+  #page section.entry{
+    grid-gap: 40em;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  #page{
+    font-size: 0.045rem;
+  }
+  #page section.entry{
+    grid-gap: 30em;
+  }
+}

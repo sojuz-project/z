@@ -1,42 +1,39 @@
 <template>
   <section>
-    <div v-scroll-reveal.reset="{ distance: '20px', delay: 400 }" class="images">
+    <div
+      v-scroll-reveal="$root.initialRoute ? { distance: '20px', delay: 100 } : { opacity:100 }"
+      class="entry-images"
+    >
       <no-ssr>
         <siema
           ref="siema"
           class="slider"
+          :auto-play="true"
+          :loop="true"
           @change="changeSlide()"
-          :auto-play=true
-          :loop=true
         >
-          <div v-for="(item, i) in attrs.gallery" :key="i" style="font-size:50em">
-            <img
-              v-if="item.image.sizes"
-              width="100%"
-              :srcset="`${item.image.sizes.medium.url} ${item.image.sizes.medium.width}w,
-            ${item.image.sizes.large.url} ${item.image.sizes.large.width}w`"
-              :sizes="`(max-width: 600px) 400px, 800px`"
-              :src="item.image.url"
-            >
-            <img
-              v-else
-              width="100%"
-              :src="item.image.url"
-            >
-          </div>
+          <Thumbnail
+            v-for="(item, i) in attrs.gallery"
+            :key="i"
+            class="entry-thumbnail"
+            :item="item.image"
+          />
         </siema>
       </no-ssr>
     </div>
-    <div
-      v-scroll-reveal.reset="{distance: '20px' , delay: 300 }"
-      class="title"
+    <HeaderTitle
+      v-scroll-reveal="$root.initialRoute ? { distance: '20px', delay: 150 } : { opacity:100 }"
+      class="entry-title"
       :style="{
         'text-shadow': `3px 3px 0 ${attrs.backgroundColor}`,
       }"
+      :title="attrs.title"
+      :i="iteration"
+    />
+    <ul
+      v-scroll-reveal="$root.initialRoute ? { distance: '20px', delay: 200 } : { opacity:100 }"
+      class="entry-list"
     >
-      {{ attrs.title }}
-    </div>
-    <ul v-scroll-reveal.reset="{ distance: '20px', delay: 400 }" class="list">
       <li
         v-for="(item, i) in attrs.gallery"
         :key="i"
@@ -47,28 +44,40 @@
         :class="{'active':( activeSlideIndex === i ),'inactive':( activeSlideIndex !== i )}"
         @click="changeSlideList(i)"
       >
-        <span class="number">0{{ i + 1 }}</span>
+        <span class="number">[ 0{{ i + 1 }} ]</span>
         <span class="text">{{ item.content }}</span>
       </li>
     </ul>
-    <div v-scroll-reveal.reset="{ distance: '20px', delay: 500 }" class="call">
+    <div
+      v-scroll-reveal="$root.initialRoute ? { distance: '20px', delay: 250 } : { opacity:100 }"
+      class="entry-call"
+    >
       <div>
-        <nuxt-link class="button__bold" :to="attrs.actionButtonTarget">
-          {{ attrs.actionButtonLabel }}
-        </nuxt-link>
+        <nuxt-link class="button__bold" :to="attrs.actionButtonTarget">{{ attrs.actionButtonLabel }}</nuxt-link>
       </div>
     </div>
-    <div v-if="iteration===0" class="first-footer"  v-scroll-reveal.reset="{ distance: '20px', delay: 200 }">
-      <MouseScroll/>
+    <div
+      v-if="iteration===0"
+      v-scroll-reveal="$root.initialRoute ? { distance: '20px', delay: 300 } : { opacity:100 }"
+      class="section-footer"
+    >
+      <MouseScroll :color="attrs.textColor" />
     </div>
   </section>
 </template>
 
 <script>
 import MouseScroll from '~/components/MouseScroll'
+import Thumbnail from '~/components/Thumbnail'
+import HeaderTitle from '~/components/HeaderTitle'
+
+import(`~/css/${process.env.STYLE_BASE}/decorate/hero-decorate.css`)
+
 export default {
   components: {
-    MouseScroll
+    MouseScroll,
+    Thumbnail,
+    HeaderTitle
   },
   props: {
     attrs: {
@@ -96,10 +105,35 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.active {
-}
-.inactive {
-}
+<style>
+  /* Main grid properties */
+  .block-hero-section {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+      ". main-slider-title main-slider-images ."
+      ". main-slider-list main-slider-images ."
+      ". main-slider-call main-slider-images ."
+      ". main-slider-footer main-slider-footer.";
+    grid-template-columns:  auto 40% 40% auto;
+    padding: 5vw 1vw
+  }
+  .block-hero-section  .entry-title {
+    grid-area: main-slider-title;
+  }
+  .block-hero-section  .entry-list {
+    grid-area: main-slider-list;
+  }
+  .block-hero-section  .entry-images {
+    grid-area: main-slider-images;
+  }
+  .block-hero-section  .entry-call {
+    grid-area: main-slider-call;
+  }
+  .block-hero-section  .section-footer {
+    grid-area: main-slider-footer;
+  }
+  .block-hero-section .entry-images .slider{
+    width:100%;
+  }
 </style>

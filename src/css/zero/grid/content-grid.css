@@ -1,0 +1,7 @@
+.block-content-section{
+  display: grid;
+  grid-template-rows:auto;
+}
+.block-content-section .entry-thumbnail {
+  justify-self: center;
+}

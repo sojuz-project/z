@@ -1,0 +1,41 @@
+/* Main grid properties */
+.block-content-section {
+  display: grid;
+  grid-template-rows:auto;
+  grid-template-areas:
+    "content-image content-image content-back content-back"
+    "content-image content-image content-title content-title"
+    ". content-subtitle content-subtitle ."
+    ". content-excerpt content-excerpt ."
+    ". content-content content-content .";
+}
+.block-content-section .back {
+  grid-area: content-back;
+}
+.block-content-section .image {
+  grid-area: content-image;
+}
+.block-content-section .title {
+  grid-area: content-title;
+}
+.block-content-section .subtitle {
+  grid-area: content-subtitle;
+}
+.block-content-section .entry-excerpt {
+  grid-area: content-excerpt;
+}
+.block-content-section .content {
+  grid-area: content-content;
+}
+
+/* Proportions */
+.block-content-section{
+  grid-template-columns:  1fr 34.5% 22.5% 1fr;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  .block-content-section{
+    grid-template-columns:  1fr 26.5% 14.5% 1fr;
+  }
+}

@@ -1,0 +1,30 @@
+/* Main grid properties */
+.block-content-section {
+  display: grid;
+  grid-template-rows:auto;
+  grid-template-areas:
+    ". content-excerpt ."
+    ". content-title ."
+    ". content-content .";
+}
+.block-content-section .title {
+  grid-area: content-title;
+}
+.block-content-section .entry-excerpt {
+  grid-area: content-excerpt;
+}
+.block-content-section .content {
+  grid-area: content-content;
+}
+
+/* Proportions */
+.block-content-section{
+  grid-template-columns:  auto 80% auto;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1440px) {
+  .block-content-section{
+    grid-template-columns:  1fr 80% 1fr;
+  }
+}

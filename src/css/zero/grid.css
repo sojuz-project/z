@@ -1,0 +1,14 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.entry{
+  display: grid;
+  grid-template-columns:  auto 40vw 40vw auto;
+  padding: 5vw 1vw;
+  grid-gap: 3vw;
+}
+.entry .entry-list{
+  grid-gap: 3vw;
+}
+

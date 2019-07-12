@@ -1,0 +1,118 @@
+/* ____________ */
+/* Hero section */
+
+.block-hero-section {
+  padding: 80em 0 10em;
+  /* height:calc(100vh - 160em); */
+}
+.block-hero-section .title{
+  font-size: 110em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  position: relative;
+  margin-bottom:1.1em;
+  margin-right: -50%;
+}
+.block-hero-section .title:before {
+  content: "";
+  position: absolute;
+  width: 0.6em;
+  height: 3px;
+  bottom: -0.4em;
+  left: 0;
+  background-color: #ccc;
+}
+.block-hero-section .list{
+  margin-top: 36em;
+}
+.block-hero-section .list li{
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 600;
+  cursor:pointer;
+  font-size: 20em;
+  transition: all .2s;
+  transform-origin: 0 center;
+  display:flex;
+}
+.block-hero-section .list li:first-of-type{
+  margin-top:0em;
+}
+.block-hero-section .list .active{
+  margin: 4em 0;
+  opacity: 1;
+  transform: scale(2);
+  width:50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+
+}
+.block-hero-section .list .inactive{
+  opacity: .3;
+  margin: 4em 0;
+}
+.block-hero-section .list .active .number{
+  position:absolute;  
+}
+.block-hero-section .list .active .text{
+  margin-left:2em;
+}
+.block-hero-section .list li span:first-of-type{
+  margin-right: 30px;
+}
+.block-hero-section .images .slider{
+    width: 160%;
+    margin-left: -28%;
+    margin-right: -40%;
+    margin-top: -190em;
+    margin-bottom: -130em
+}
+.block-hero-section .call{
+  font-size: 35em;
+  margin: 0em 0 2.5em;
+}
+
+@media only screen and (max-width : 768px) {
+  .block-hero-section .images .slider {
+    width: 300%;
+    margin: -80em -50% -150em -70%;
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 360px) {
+  .block-hero-section .title{
+    margin-right: 0;
+  }
+  .block-hero-section .images .slider {
+    width: 500%;
+    margin: -60em -80% -150em -200%;
+    opacity: 0.8;
+  }
+  .block-hero-section .list{
+    background: #33333355;
+    margin:-20em;
+    padding:20em;
+  }
+  .block-hero-section .list .active{
+    width:70%;
+    background: #333;
+    text-overflow: initial;
+    white-space: pre-wrap;
+    padding:0.5em 1em;
+    line-height: 1.2em;
+    margin-left: -2em;
+  }
+  .block-hero-section .list .inactive{
+    opacity: .8;
+  }
+  .block-hero-section .list .number{
+    display: none;
+  }
+  .block-hero-section .list .active .text{
+    margin-left:0;
+    text-shadow: initial;
+  }
+}

@@ -1,0 +1,71 @@
+/* __________________ */
+/* Advantages section */
+
+.block-advantages-section{
+  padding: 50em 0;
+  background-color: #fff;
+  color: #30333C;
+}
+.block-advantages-section .title{
+  font-size:75em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  margin: 1em 0;
+}
+.block-advantages-section .list{
+  font-size:30em;
+  color: #E93558;
+  display:flex;
+  flex-direction:column;
+}
+.block-advantages-section .list li{
+  max-width: 100%;
+  position: relative;
+  padding: 0.75em 1.1em;
+  margin-left: -1.1em;
+  align-self: baseline;
+  cursor: pointer;
+  margin-bottom:0.1em;
+}
+.block-advantages-section .list li span {
+  max-width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+}
+.block-advantages-section .list li svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: -webkit-fill-available;
+  stroke-dashoffset: -2000;
+  stroke-dasharray: 2000;
+  transition: all 1s;
+}
+.block-advantages-section .list li svg:hover {
+  stroke-dashoffset: 0;
+  transition: all .5s;
+}
+.block-advantages-section .list .active{
+  color: #E93558;
+  border-radius: 37em;
+}
+.block-advantages-section .list .active svg {
+  stroke-dashoffset: 0;
+}
+.block-advantages-section .content{
+  justify-self: center;
+  max-width: 21rem;
+  font-size:22em;
+  line-height: 1.8em;
+  color:#30333C;
+}
+.block-advantages-section .content img{
+  margin-top:4em;
+  margin-bottom:-4em;
+}
+.block-advantages-section .content .inactive{
+  display: none;
+}

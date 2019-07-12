@@ -1,0 +1,48 @@
+html { 
+  scroll-behavior: smooth;
+}
+#page{
+  font-size: 1.2vw;
+}
+section.entry .entry-title{
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  position: relative;
+}
+section.entry H1.entry-title{
+  font-size: 4em;
+}
+section.entry H2.entry-title{
+  font-size: 2.8em;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+}
+section.entry .entry-list{
+  margin-top:1.5em;
+}
+section.entry.center{
+  text-align: center;
+} 
+section.entry.small img.entry-thumbnail{
+  max-width: 50%;
+}
+section.entry.micro img.entry-thumbnail{
+  max-width: 20%;
+}
+
+section.entry .entry-title.center,
+section.entry .entry-excerpt.center,
+section.entry .entry-content.center{
+  text-align: center;
+}
+img.entry-thumbnail{
+  max-width: 100%;
+}
+img.entry-thumbnail.small{
+  max-width: 50%;
+}
+img.entry-thumbnail.micro{
+  max-width: 20%;
+}
+
+

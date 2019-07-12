@@ -1,0 +1,19 @@
+/* Main grid properties */
+.block-content-section.compact-revers{
+  grid-template-areas:
+    ". content-image-cr content-title-cr ."
+		". content-image-cr content-excerpt-cr ."
+		". content-content-cr content-excerpt-cr .";
+}
+.block-content-section.compact-revers .entry-title {
+  grid-area: content-title-cr;
+}
+.block-content-section.compact-revers .entry-thumbnail {
+  grid-area: content-image-cr;
+}
+.block-content-section.compact-revers .entry-excerpt {
+  grid-area: content-excerpt-cr;
+}
+.block-content-section.compact-revers .entry-content {
+  grid-area: content-content-cr;
+}

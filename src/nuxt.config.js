@@ -1,5 +1,11 @@
+import css from './css/zero/default'
+
 export default {
+  env: {
+    STYLE_BASE: 'zero'
+  },
   mode: 'universal',
+  modern: 'server',
   server: {
     host: '0.0.0.0'
   },
@@ -24,14 +30,7 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
-    '~/css/reset.css',
-    '~/css/main.css',
-    '~/css/grid.css',
-    '~/css/decorate.css',
-    '~/css/buttons.css',
-    '~/css/mouse-scroll.css'
-  ],
+  css,
   /*
   ** Plugins to load before mounting the App
   */
@@ -43,7 +42,7 @@ export default {
       src: '~/plugins/vue-scroll-reveal',
       ssr: false
     }, {
-      src: 'plugins/owl.js',
+      src: '~/plugins/lazysizes',
       ssr: false
     }
   ],

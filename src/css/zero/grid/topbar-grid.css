@@ -1,0 +1,15 @@
+#top-bar{
+  display: grid;
+  grid-template-rows: 5vh;
+  grid-template-areas: ". main-logo main-menu .";
+  grid-template-columns:  auto 40vw 40vw auto;
+  padding: 2vw 1vw;
+  grid-gap: 0.5em;
+}
+#top-bar .main-logo {
+  grid-area: main-logo;
+  height:100%;
+}
+#top-bar .main-menu {
+  grid-area: main-menu;
+}
