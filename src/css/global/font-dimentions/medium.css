@@ -1,0 +1,53 @@
+/* 
+  Font sizes 
+*/
+h1{
+  font-size: calc(5vw - .15em);
+  line-height: calc(5vw - .15em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+h2{
+  font-size: calc(3vw - .1em);
+  line-height: calc(4vw - .1em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+h3, h4, h5{
+  font-weight: 600;
+}
+.block,
+.has-normal-font-size
+{
+  font-size: calc(1.85vw - .08em);
+  line-height: calc(3vw - .075em);
+}
+.has-huge-font-size{
+  font-size: calc(3vw - .1em);
+  line-height: calc(4vw - .1em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+h3,
+.has-large-font-size{
+  font-size: calc(2.5vw - .08em);
+  line-height: calc(3.5vw - .08em);
+  font-weight: 600;
+}
+/*    */
+
+h4,
+.has-small-font-size{
+  font-size: calc(1.5vw - .05em);
+  line-height: calc(2vw - .05em);
+}
+a,
+h5,
+.main-menu,
+.has-ultrasmall-font-size{
+  font-size: calc(1vw - .025em);
+  line-height: calc(1.5vw - .025em);
+}

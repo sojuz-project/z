@@ -1,18 +1,19 @@
 <template>
   <div class="container">
-    <page-header title="Login" />
-
-    <ApolloMutation
-      :mutation="require('~/gql/login.gql')"
-      :variables="{ username, password }"
-      @done="onDone"
-    >
+    <ApolloMutation :mutation="require('~/gql/login.gql')" :variables="{ username, password }" @done="onDone">
       <template v-slot="{ mutate, loading }">
         <div class="wrapper">
-          <form @submit.prevent="() => { loginError = ''; mutate() }">
-            <input v-model="username" placeholder="Username" required="required" class="custom-input" >
+          <form
+            @submit.prevent="
+              () => {
+                loginError = '';
+                mutate();
+              }
+            "
+          >
+            <input v-model="username" placeholder="Username" required="required" class="custom-input" />
 
-            <input v-model="password" placeholder="Password" required="required" class="custom-input" type="password" >
+            <input v-model="password" placeholder="Password" required="required" class="custom-input" type="password" />
 
             <button class="custom-button" type="submit" :disabled="loading">
               Log in
@@ -27,36 +28,31 @@
 </template>
 
 <script>
-import PageHeader from '~/components/PageHeader.vue'
-
 export default {
+  transition: 'smooth',
   name: 'LoginPage',
   middleware: 'isAuth',
-  components: {
-    PageHeader
-  },
   data() {
     return {
       username: '',
       password: '',
-      loginError: null
-    }
+      loginError: null,
+    };
   },
   methods: {
     async onDone({ data }) {
-      const { token, data: { status } = {} } = data.login
+      const { token, data: { status } = {} } = data.login;
 
       if (token) {
-        await this.$apolloHelpers.onLogin(token)
-        this.$router.go(-1)
+        await this.$apolloHelpers.onLogin(token);
+        this.$router.go(-1);
       } else {
-        this.loginError = parseInt(status) === 403
-          ? 'User with given credentials doesn\'t exis'
-          : 'Something went wrong'
+        this.loginError =
+          parseInt(status) === 403 ? "User with given credentials doesn't exis" : 'Something went wrong';
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

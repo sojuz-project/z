@@ -1,0 +1,10 @@
+query PostLikes(
+  $id:Int
+  ){
+  post(
+    id: $id
+    )
+    {
+      likes
+    }
+}

@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../../assets/fonts/SourceSansPro-Regular.woff2) format('woff2');
+  
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('SourceSansPro-Bold'), url(../../../assets/fonts/SourceSansPro-Bold.woff2) format('woff2');
+  
+}
+
+body{
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}

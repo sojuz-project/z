@@ -1,0 +1,23 @@
+/* 
+  Blockqquote
+*/
+.site-content > .corequote{
+   padding-left: 15%;
+   padding-right: 15%;
+} 
+@media only screen and (max-width : 768px) {
+    .site-content > .corequote{
+      padding-left: 10%;
+      padding-right: 15%;
+    }
+}
+blockquote{
+  margin-top: calc(3 * 1em);
+  margin-bottom: calc(3.33 * 1em);
+  padding-left:2em;
+  hyphens: auto;
+  word-break: break-word;
+  border-left:2px solid orange;
+}
+@media only screen and (max-width : 768px) {
+}

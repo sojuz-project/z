@@ -1,0 +1,162 @@
+/* 
+https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
+AUTO PREFIXER:
+grid-template-columns	
+grid-template-rows
+grid-template-areas
+grid-template
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+grid-row
+grid-column
+grid-area
+grid-row-gap
+grid-column-gap
+grid-gap
+align-self
+justify-self
+*/
+
+*{
+  box-sizing: border-box;
+  position:relative;
+}
+
+/* 
+  Main blocks 
+*/
+.block.align-full{
+  padding-right:0;
+  padding-left:0;
+}
+
+/* 
+  BG colors 
+*/
+.is-style-solid-color,
+.has-primary-background-color .overlay,
+.wp-block-button__link.has-primary-background-color{
+  background-color: #0073a8;
+}
+.has-secondary-background-color .overlay,
+.wp-block-button__link.has-secondary-background-color{
+  background-color: #005075
+}
+.has-dark-gray-background-color .overlay,
+.wp-block-button__link.has-dark-gray-background-color{
+  background-color: #000
+}
+.has-light-gray-background-color .overlay,
+.wp-block-button__link.has-light-gray-background-color{
+  background-color: #999
+}
+.has-white-background-color .overlay,
+.wp-block-button__link.has-white-background-color{
+  background-color: #fff
+}
+/* 
+  Text colors 
+*/
+.has-primary-color{
+  color:#0073a8;
+}
+.has-secondary-color{
+  color: #005075;
+}
+.has-dark-gray-color{
+  color: #000
+}
+.has-light-gray-color{
+  color: #999
+}
+.has-white-color{
+  color: #fff
+}
+
+.block, .block .text{
+  position:relative;
+  height:100%;
+}
+.customwrapper .text > div,
+.customwrapper .text > div svg{
+  height:100%;
+  width:100%;
+}
+
+.overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  z-index:0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+form input{
+  padding: .5vw;
+  margin-bottom: 1vw;
+}
+button{
+  border: none;
+}
+
+@media only screen and (max-width : 768px) {
+  h1{
+    font-size:3em;
+    line-height:1em;
+  }
+  h2{
+    font-size:2.5em;
+    line-height:1em;
+  }
+  h3{
+    font-size:2em;
+    line-height:1em;
+  }
+  .has-small-font-size,
+  .has-ultrasmall-font-size{
+    font-size:1em;
+    line-height:1em;
+  }
+}
+
+
+blockquote p{
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+p.has-drop-cap::first-letter { 
+  font-size: 200%;
+}
+/* @media only screen and (max-width : 768px) {
+  p{
+    font-size:0.85em;
+  }
+  blockquote p{
+    font-size: 1.1em;
+  }
+  h3{
+    font-size: 1.4em;
+  }
+} */
+/* 
+  Spacings
+*/
+.block-cell p, .block-cell .wp-block-button{
+  padding:0.1em 1.5em;
+}
+
+
+
+strong{
+  font-weight: bold;
+}
+a{
+  color: #0073a8;
+}

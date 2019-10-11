@@ -1,0 +1,36 @@
+
+ /* first level */
+ .site-content > .corecolumns{
+   /* padding-left: 10%;
+   padding-right: 10%;
+   padding-top: 4.1em;
+   padding-bottom: 0;
+   position: relative; */
+} 
+
+.corecolumns{
+  display: grid;
+}
+.corecolumns .corecolumn{
+  display: grid;
+  /* grid-template-columns: repeat(49, 1fr); */
+}
+
+
+ @media only screen and (max-width : 768px) {
+    .site-content > .corecolumns{
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 2.1em;
+      padding-bottom: 0;
+      position: relative;
+    }
+    .site-content > .corecolumns .coreheading > *,
+    .site-content > .corecolumns .corecolumn p{
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    .site-content > .corecolumns .corecolumn{
+      padding-right: 0; 
+    }
+ }

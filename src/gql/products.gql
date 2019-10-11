@@ -2,8 +2,15 @@ query posts($post_type: [String!]!) {
   posts(post_type: $post_type) {
     id
     post_title
+    post_name
     thumbnail {
       src
+      sizes {
+        size
+        file
+        url
+        width
+      }
     }
     post_meta(keys: [_price, _stock_status, _sale_price, _stock]) {
       meta_key

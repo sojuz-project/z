@@ -1,7 +1,7 @@
 {
-  "name": "WebArtisan",
+  "name": "ZeroPWA",
   "version": "1.0.0",
-  "description": "My splendid Nuxt.js project",
+  "description": "Ultra fast WP Theme with Apollo GraphQL support",
   "author": "",
   "private": true,
   "scripts": {
@@ -16,26 +16,13 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc6",
     "@nuxtjs/pwa": "^2.6.0",
+    "apollo-link-state": "^0.4.2",
     "lazysizes": "^5.1.0",
     "nuxt": "^2.8.1",
-    "vue-owl-carousel": "^2.0.3",
-    "vue-scroll-reveal": "^1.0.11",
-    "vue2-scrollspy": "^2.3.1",
+    "vue-awesome-swiper": "^3.1.3",
     "vue2-siema": "^0.2.2"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^0.0.1",
-    "@nuxtjs/eslint-module": "^0.0.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
-    "eslint-config-standard": ">=12.0.0",
-    "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
-    "eslint-plugin-node": ">=8.0.1",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-promise": ">=4.0.1",
-    "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
     "nodemon": "^1.18.9",
     "patch-package": "^6.1.2"
   }

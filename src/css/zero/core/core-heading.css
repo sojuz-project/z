@@ -1,0 +1,23 @@
+ /* first level */
+ .site-content > .coreheading,
+ .grid-conponent > .coreheading{
+   /* movr to blobal */
+   padding-top: 4vw;
+   padding-bottom: 4vw;
+   position: relative;
+} 
+ .site-content > .coreheading h2:before,
+ .grid-conponent > .coreheading h2:before{
+   background-color: #000;
+    content: "";
+    position: absolute;
+    width: 4vw;
+    height: 1px;
+    bottom: -1vw;
+    left: 48vw;
+ }
+/* rest levels */
+.coreheading{
+   /* padding-top: 1em;
+   padding-bottom: 1em; */
+}

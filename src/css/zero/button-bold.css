@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center; 
   position: relative;
-  font-family: Montserrat;
   font-weight: 900;
   font-size: 1em;
   border: none;
@@ -21,7 +20,7 @@
   content: '';
   width: 1.75em;
   height: 100%;
-  background-color: #8B8F99;
+  background-color: #00000033;
   right: 0;
   top: 0;
   z-index: 0;

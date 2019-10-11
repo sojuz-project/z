@@ -1,0 +1,17 @@
+
+.customimage img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.customimage .overlay{
+  z-index: 1;
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+.customimage{
+  background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQYV2N89uzZfwYokJKSYoSxGUmXgGkF0ci64WYSLQEAPqIXGqUuUaQAAAAASUVORK5CYII=
+    ) repeat;
+}

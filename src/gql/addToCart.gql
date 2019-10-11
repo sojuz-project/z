@@ -1,3 +1,3 @@
-mutation add_to_cart($productId: Int!, $quantity: Int!) {
-  add_to_cart(item: { product_id: $productId, quantity: $quantity })
+mutation add_to_cart($productId: Int!, $quantity: Int!, $cart_key: String) {
+  add_to_cart(item: { product_id: $productId, quantity: $quantity } cart_key: $cart_key)
 }

@@ -6,7 +6,12 @@ attachments(
   ids: $ids
   )
   {
-    id
-    src
+    src,
+    url,
+    sizes {
+      size
+      url
+      width
+    }
   }
 }

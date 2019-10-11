@@ -1,0 +1,27 @@
+.wp-block-button{
+  box-sizing: border-box;
+  margin: 0.55em 0;
+  padding: 0.55em 0;
+}
+.wp-block-button a{
+  color:#fff; 
+}
+.wp-block-button__link {
+    color:#fff; 
+    background-color: #000;
+    border-radius: 10vw;
+    font-weight: bold;
+    padding: 1vw 3vw;
+    text-decoration: none;
+    cursor:pointer;
+}
+.is-style-outline .wp-block-button__link{
+  border-width: 2px;
+  border-style: solid;
+  background: transparent;
+  color:#0073a8; 
+}
+
+.wp-block-button.aligncenter{
+  text-align: center
+}

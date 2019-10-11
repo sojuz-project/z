@@ -12,6 +12,13 @@ menus(
         post_title
         id
       }
-    }
+      children {
+        navitem {
+          post_name
+          post_title
+          id
+        }
+      }
+    } 
   }
 }

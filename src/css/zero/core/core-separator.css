@@ -1,0 +1,33 @@
+ .site-content > .coreseparator{
+   margin-left: 20%;
+   margin-right: 20%;
+} 
+
+.coreseparator {
+    border: none;
+    border-bottom: 2px solid #8f98a1;
+    margin: 1.65em auto;
+    width: 2.25em;
+    margin-left: 0;
+}
+
+.coreseparator.is-style-wide{
+  margin-left: auto;
+  width: 100%;
+  border-bottom: 1px solid #8f98a1;
+}
+
+.coreseparator.is-style-dots {
+    border: none;
+    text-align: center;
+    margin-left: auto;
+    width: 100%;
+}
+.coreseparator.is-style-dots:before {
+    content: "\00b7 \00b7 \00b7";
+    color: #191e23;
+    font-size: 2em;
+    letter-spacing: 2em;
+    padding-left: 2em;
+    font-family: serif;
+}

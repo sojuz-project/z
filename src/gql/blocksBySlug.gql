@@ -1,13 +1,33 @@
 query Post(
   $slug:String
+  $tagSlug:String = ""
+  $catSlug:String = ""
+  $page:Int = 1
+  $postSlug:String = ""
   ){
-  post(
-    name: $slug
+  get_page(
+    slug: $slug,
     )
     {
-      blocks{
+      blocks( 
+        tagSlug: $tagSlug,
+        catSlug: $catSlug,
+        postSlug: $postSlug,
+        page: $page
+      ){
         attrs
         blockName
+        innerHTML
+        innerBlocks{
+          blockName
+          attrs
+          innerHTML
+          innerBlocks{
+            blockName
+            attrs
+            innerHTML
+          }
+        }
       }
     }
 }

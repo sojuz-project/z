@@ -1,0 +1,9 @@
+/* .sojuzblockgridcontainer > .grid-container-wrapper {
+  display:grid;
+  flex-wrap: wrap;
+}
+.site-content > .sojuzblockgridcontainer .grid-container-wrapper.align-standard{
+  padding-left:4vw;
+  padding-right:4vw;
+  flex: 0 0 100%;
+} */

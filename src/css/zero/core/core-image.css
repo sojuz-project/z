@@ -1,0 +1,32 @@
+
+.coreimage img{
+  max-width: 100%;
+  height: auto;
+}
+.coreimage figure.aligncenter{
+  text-align: center;
+}
+.rect.is-style-rect-image figure{
+   position: relative;  
+}
+.is-style-rect-image figure.aligncenter{
+ text-align: initial;
+}
+.is-style-rect-image figure::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.is-style-rect-image figure img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grid-component img{
+  object-fit: cover;
+  width:auto;
+  height:100%;
+}
+

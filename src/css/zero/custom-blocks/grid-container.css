@@ -1,0 +1,70 @@
+
+ .sojuzblockgridcontainer .coreparagraph{
+    padding-top: initial;
+    padding-bottom: initial;
+ }
+
+
+.grid-section-wrapper{
+  display:grid;
+}
+.grid-section-wrapper .grid-section{
+  display: grid;
+  grid-template-columns: repeat(49, 1fr);
+}
+
+
+.block{
+  position:relative;
+  box-sizing:border-box;
+}
+
+
+
+
+.sojuzblockgridcontainer .grid-component svg{
+  width:100%;
+  height:100%;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.has-0-background-opacity .overlay{
+  opacity: 1
+}
+.has-10-background-opacity .overlay{
+  opacity: .9
+}
+.has-20-background-opacity .overlay{
+  opacity: .8
+}
+.has-30-background-opacity .overlay{
+  opacity: .7
+}
+.has-50-background-opacity .overlay{
+  opacity: .6
+}
+.has-40-background-opacity .overlay{
+  opacity: .5
+}
+.has-50-background-opacity .overlay{
+  opacity: .4
+}
+.has-60-background-opacity .overlay{
+  opacity: .3
+}
+.has-70-background-opacity .overlay{
+  opacity: .2
+}
+.has-90-background-opacity .overlay{
+  opacity: .1
+}
+.has-100-background-opacity .overlay{
+  opacity: 0
+}

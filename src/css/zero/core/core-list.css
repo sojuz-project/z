@@ -1,0 +1,14 @@
+ .site-content > .corelist{
+   padding-left: 20%;
+   padding-right: 20%;
+} 
+.corelist ul{
+  margin: 0 1.3em;
+}
+.corelist li{
+  margin: 0 0 2vw;
+  list-style: disc
+}
+.corelist li:last-of-type{
+  margin: 0 0 3vw;
+}

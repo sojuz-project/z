@@ -1,9 +1,9 @@
-export default function ({ app, route, redirect }) {
-  const hasToken = !!app.$apolloHelpers.getToken()
+export default function({ app, route, redirect }) {
+  const hasToken = !!app.$apolloHelpers.getToken();
 
   if (route.path === '/cart' && !hasToken) {
-    redirect('/login')
+    redirect('/login');
   } else if (route.path === '/login' && hasToken) {
-    redirect('/products')
+    redirect('/products');
   }
 }

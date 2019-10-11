@@ -1,0 +1,24 @@
+ /* first level */
+ .site-content > .coreparagraph{
+   padding-left: 20vw;
+   padding-right: 20vw;
+} 
+@media only screen and (max-width : 768px) {
+    .site-content > .coreparagraph{
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+}
+ .coreparagraph{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+ }
+ .coreparagraph p{
+    /* padding-bottom:2vw; */
+ }
+.coreparagraph p img{
+   width:5vw;
+   float:left;
+   margin-right:2vw;
+   margin-bottom:1vw;
+}

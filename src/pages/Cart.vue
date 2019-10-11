@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <page-header title="Cart" />
-
     <div v-if="cartData.length">
       <table style="width:100%">
         <thead>
@@ -10,7 +8,7 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Total price</th>
-            <th/>
+            <th />
           </tr>
         </thead>
 
@@ -24,7 +22,7 @@
               <ApolloMutation
                 :mutation="require('~/gql/removeFromCart.gql')"
                 :refetch-queries="() => [{ query: require('~/gql/getCart.gql') }]"
-                :variables="{ item: item.key }"
+                :variables="{ item: item.key, cart_key: cartHash() }"
               >
                 <template v-slot="{ mutate, loading }">
                   <button class="custom-button custom-button_red" :disabled="loading" @click="mutate">
@@ -40,6 +38,7 @@
       <div class="summary">
         <ApolloMutation
           :mutation="require('~/gql/clearCart.gql')"
+          :variables="{ cart_key: cartHash() }"
           :refetch-queries="() => [{ query: require('~/gql/getCart.gql') }]"
         >
           <template v-slot="{ mutate, loading }">
@@ -50,7 +49,7 @@
         </ApolloMutation>
 
         <div>
-          Total price:{{ }}
+          Total price:{{}}
           <span>
             {{ totalPrice }}
           </span>
@@ -65,37 +64,40 @@
 </template>
 
 <script>
-import PageHeader from '~/components/PageHeader.vue'
+import { cartHash } from '~/helpers/cartSession';
 
 export default {
+  transition: 'smooth',
   name: 'CartPage',
-  middleware: 'isAuth',
-  components: {
-    PageHeader
-  },
+  // middleware: 'isAuth',
   data() {
     return {
-      cartData: []
-    }
+      cartData: [],
+      cartHash,
+    };
   },
   apollo: {
     cartData: {
       query: require('~/gql/getCart.gql'),
+      variables() {
+        return {
+          cart_hash: this.cartHash(),
+        };
+      },
+      skip: typeof window === 'undefined',
       update(data) {
-        return (data && data.get_cart)
-          ? Object.values(data.get_cart)
-          : []
+        return data && data.get_cart ? Object.values(data.get_cart) : [];
       },
       prefetch: true,
-      fetchPolicy: 'network-only'
-    }
+      fetchPolicy: 'network-only',
+    },
   },
   computed: {
     totalPrice() {
-      return this.cartData.reduce((acc, { line_total: t }) => acc + t, 0)
-    }
-  }
-}
+      return this.cartData.reduce((acc, { line_total: t }) => acc + t, 0);
+    },
+  },
+};
 </script>
 
 <style>

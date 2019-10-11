@@ -40,17 +40,18 @@
      id="namedview848"
      showgrid="false"
      inkscape:zoom="0.654"
-     inkscape:cx="500"
-     inkscape:cy="500"
+     inkscape:cx="468.18791"
+     inkscape:cy="442.1982"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg846" />
+     inkscape:current-layer="svg846"
+     inkscape:pagecheckerboard="true" />
   <path
-     d="m 751.7,499.9 -13.2,-13.2 -0.1,0.1 L 261.6,10 232.4,39.2 695.1,500 232.3,960.8 261.5,990 738.3,513.2 l 0.1,0.1 13.2,-13.2 z"
+     d="M 751.7,499.9 261.6,10 216.4,59.2 657.1,500 212.3,940.8 261.5,990 Z"
      id="path844"
-     style="fill:#ffffff"
+     style="fill:#f9f9f9"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cccccccccccc"
-     transform="matrix(-1,0,0,1,984,0)" />
+     sodipodi:nodetypes="ccccccc"
+     transform="rotate(90,491,509)" />
 </svg>
