@@ -1,0 +1,6 @@
+query blocksMenu($slug: String = "") {
+  blocksMenu: queryPost(post_name: $slug ) {
+    id: ID
+    blocks
+  }
+}

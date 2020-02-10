@@ -1,23 +1,21 @@
 <template>
-  <div
-    class="block-cell"
-    v-html="block.innerHTML"
-  >
-    {{ block.innerHTML }}
+  <div :class="[blockAttrs.className]" v-html="innerHtml">
+    {{ innerHtml }}
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    block: {
+    blockAttrs: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
-    iteration: {
-      type: Number,
-      default: 0
-    }
-  }
-}
+    innerHtml: {
+      type: String,
+      default: () => '',
+    },
+  },
+};
 </script>
+<style src="~/css/core/core-pullquote.css"></style>

@@ -1,0 +1,7 @@
+query likeData($id:Int) {
+  post(id: $id) {
+    id
+    likes
+    liked
+  }
+}

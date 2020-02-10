@@ -1,0 +1,30 @@
+main .corecover{
+    position: relative;
+    background-size: cover; 
+    padding:5vw 0;
+    color:#fff;
+}
+.corecover.hasParallax{
+    background-attachment: fixed;
+}
+.corecover .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    max-width:100%;
+    height:100%;
+}
+.corecover > *{
+    position: relative;
+    z-index: 1;
+}
+main .is-style-cover-10{
+    padding:10vw 0;
+}
+main .is-style-cover-15{
+    padding:15vw 0;
+}
+

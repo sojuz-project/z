@@ -1,0 +1,124 @@
+/**
+  @atom .align-default 
+  @pseudo childrens
+  @modifiers .corecolumns
+*/
+main > .corecolumns.align-default {
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+/**
+  @atom .align-default
+  @pseudo childrens
+  @modifiers .group
+*/
+main > .group.align-default > * {
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+/**
+  @atom .align-default
+  @modifiers .corecover
+*/
+main > .corecover.align-default {
+  max-width: 928px; 
+}
+
+/**
+  @atom .align-default
+  @pseudo childrens
+  @modifiers .corecover
+*/
+ main >.corecover.align-default > * {
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+/**
+  @atom .align-full
+  @pseudo childrens
+  @modifiers .group
+*/
+main > .group.align-full > *{
+  max-width: 1160px;
+   margin: 0 auto;
+}
+
+/**
+  @atom .align-full
+  @pseudo childrens
+  @modifiers .corecover
+*/
+main > .corecover.align-full > * {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+
+/**
+  @atom .align-wide
+  @pseudo childrens
+  @modifiers .group
+*/
+main > .group.align-wide > * {
+  max-width: 928px;
+  margin: 0 auto;
+}
+
+
+/**
+  @atom .align-wide
+  @pseudo childrens
+  @modifiers .corecover
+*/
+main > .corecover.align-wide > * {
+  max-width: 928px;
+  margin: 0 auto;
+}
+
+/**
+  @atom .align-wide
+  @modifiers .block
+*/
+main > .block.align-wide {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1160px;
+}
+
+/**
+  @atom Core Image
+  @pseudo child-combinator
+  @markup
+    Alone and first level placed core-image for gutenberg component, 
+    is centered on tablet width 
+    ```
+  @example
+    <main>
+      <figure class="default block coreimage">
+        <img style="max-width:20vw" class="photo lazyloaded" src="https://sojuz.space/backend/wp-content/uploads/2019/07/image_1.png">
+      </figure>
+    </main>
+    ```
+*/ 
+main > .coreimage {
+  max-width: 736px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+  @atom .block
+  @pseudo child-combinator
+*/
+main > .block {
+  max-width: 736px;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+
+
+

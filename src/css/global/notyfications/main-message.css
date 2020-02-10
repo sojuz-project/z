@@ -1,0 +1,47 @@
+/**
+  @atom .main-message 
+*/
+.main-message{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8vw;
+  text-transform: uppercase;
+  position: sticky;
+  top:5vw;
+  z-index: 10;
+  cursor:pointer;
+}
+.main-message:hover{
+filter: grayscale(30%);
+}
+.main-message .close{
+  height:1vw
+}
+.main-message:hover .close{
+  stroke-width: 5;
+}
+/**
+  @atom *Any 
+  @modifiers .warning
+*/
+.warning{
+  background-color: #f9ee53;
+  color:#000;
+}
+/**
+  @atom *Any 
+  @modifiers .error
+*/
+.error{
+  background-color: #f95353;
+  color:#fff;
+}
+/**
+  @atom *Any 
+  @modifiers success
+*/
+.success{
+  background-color: #5ea52f;
+  color:#fff;
+}

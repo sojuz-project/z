@@ -1,26 +1,22 @@
-<template>
-  <div :class="attrs.className" :style="attrs.style">
-    <!-- classes alignfull has-background-dim has-parallax -->
-    <!-- {{ attrs }} -->
-    <div class="overlay"></div>
-    <div v-html="innerHtml" class="text">
-      {{ innerHtml }}
-    </div>
+<template functional>
+  <div :class="[data.class, props.blockAttrs.className]" :style="props.blockAttrs.style">
+    <span v-if="props.blockAttrs.tagName" :is="props.blockAttrs.tagName" v-html="props.innerHtml" />
+    <span v-else v-html="props.innerHtml" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
     innerHtml: {
       type: String,
-      default: () => '',
+      default: '',
     },
   },
 };
 </script>
-<style src="styleBase/core/core-heading.css"></style>
+<style src="~/css/core/core-heading.css"></style>

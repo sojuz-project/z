@@ -1,0 +1,51 @@
+/**
+  @atom TODO - check inton depreciated 
+*/
+.two-columns .column,
+.three-columns .column,
+.three-columns-main .column:nth-child(1),
+.three-columns-main .column:nth-child(2),
+.three-columns-main .column:nth-child(3) {
+    display: block;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-right: 0;
+}
+/**
+  @atom TODO - check inton depreciated 
+*/
+.four-columns .column {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+}
+/**
+  @atom TODO - check inton depreciated 
+*/ 
+.two-columns.border .column, .three-columns.border .column, .three-columns-main.border .column {
+    border-left: none;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+/**
+  @atom TODO - check inton depreciated 
+*/
+.two-columns.border-b, .three-columns.border-b {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+}
+/**
+  @atom TODO - check inton depreciated 
+*/
+.box-catalog .three-columns.border-b {
+    margin-bottom: 0;
+}
+/**
+  @atom TODO - check inton depreciated 
+*/
+.box-catalog .repertoire-header + .three-columns .column:first-child h5 {
+    padding-top: 0;
+}

@@ -1,0 +1,3 @@
+mutation updateProfile($user: UserInput) {
+  update_profile(user: $user)
+}

@@ -1,39 +1,36 @@
 <template>
-  <div id="page" :class="{ subpage: $route.path !== '/' }">
-    <MainMessage ref="main-message"></MainMessage>
-    <BlocksTraverse :query-params="$route.params" />
+  <div>
+    <main v-if="mainBlocks">
+      <inner-block v-for="block in mainBlocks.blocks" :key="block.blockName" :blocks="block" />
+    </main>
     <router-view />
   </div>
 </template>
-<script>
-import BlocksTraverse from '~/components/BlocksTraverse.vue';
-// import Options from '~/gql/options.gql';
 
+<script>
+import { layout } from 'sojuzProject/nuxt.layout.js';
 export default {
-  components: {
-    BlocksTraverse,
+  transition: 'smooth',
+  layout: layout,
+  name: 'Page',
+  apollo: {
+    mainBlocks: {
+      query: require('~/gql/core/get_es_blocks.gql'),
+      variables() {
+        return {
+          slug: this.$route.params.slug || 'home-page',
+        };
+      },
+    },
   },
-  // mounted() {
-  //   // this.updateMessage({ msg: 'Test message', type: 'error' });
-  // },
-  // beforeRouteUpdate(to, from, next) {
-  //   console.log(this.route, this.route.path.substr(1));
-  //   next();
-  // },
-  // apollo: {
-  //   options: {
-  //     variables: {
-  //       option_name: 'page_on_front',
-  //     },
-  //     query: Options,
-  //     result({ data }) {
-  //       data.options && data.options.option_value == 0
-  //         ? this.updateMessage({ msg: 'Set any WP page as home in admin panes', type: 'warning' })
-  //         : false;
-  //     },
-  //   },
-  // },
+  head() {
+    if (!this.mainBlocks) return {};
+
+    return {
+      title: this.mainBlocks.post_title,
+    };
+  },
 };
 </script>
-<style src="styleBase/atomic-css.css"></style>
-<style src="styleBase/main_message.css"></style>
+
+<style src="~/css/core/core-page.css"></style>

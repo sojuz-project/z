@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <Header />
-    <search-input />
+  <PageWrapper>
+    <BlocksStatic tag-name="header" content-slug="header_template_slug" />
+    <ToastMessage />
     <nuxt />
-  </div>
+    <BlocksStatic tag-name="footer" content-slug="footer_template_slug" />
+  </PageWrapper>
 </template>
 
 <script>
-import Header from '~/components/pagePartials/Header.vue';
-import SearchInput from '~/components/customBlocks/SearchInput.vue';
+import PageWrapper from '~/components/custom/PageWrapper.vue';
+import BlocksStatic from '~/components/custom/BlocksStatic.vue';
+import ToastMessage from '~/modules/toast/ToastMessage.vue';
 
 export default {
   name: 'DefaultLayout',
   components: {
-    Header,
-    SearchInput,
+    PageWrapper,
+    BlocksStatic,
+    ToastMessage,
   },
 };
 </script>

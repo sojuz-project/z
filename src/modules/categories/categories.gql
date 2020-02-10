@@ -1,0 +1,6 @@
+query Categories($name: String = "product_cat") {
+    categories(name: $name) {
+      name
+      slug
+    }
+  }

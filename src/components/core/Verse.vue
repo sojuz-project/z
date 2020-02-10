@@ -1,8 +1,5 @@
-<template>
-  <div
-    class="block-cell"
-    v-html="block.innerHTML"
-  >
+<template functional>
+  <div class="block-cell" v-html="block.innerHTML">
     {{ block.innerHTML }}
   </div>
 </template>
@@ -12,12 +9,12 @@ export default {
   props: {
     block: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     iteration: {
       type: Number,
-      default: 0
-    }
-  }
-}
+      default: 0,
+    },
+  },
+};
 </script>

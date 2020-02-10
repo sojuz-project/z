@@ -1,0 +1,8 @@
+query mainBlocks($slug: String = "") {
+  mainBlocks: queryPost(post_name: $slug) {
+    id: ID
+    blocks
+    post_title
+    post_meta
+  }
+}

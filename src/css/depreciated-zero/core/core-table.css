@@ -1,0 +1,12 @@
+.wp-block-table{
+  width:100%
+}
+.wp-block-table td{
+  padding:10px;
+}
+
+.wp-block-table.is-style-regular tr,
+.wp-block-table.is-style-regular td{
+  border-width: 1px;
+  border-style: solid;
+}

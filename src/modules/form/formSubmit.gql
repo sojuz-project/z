@@ -1,0 +1,11 @@
+mutation form($action: String!, $fields: JSON) {
+  form(action: $action, fields: $fields) {
+    status
+    cb
+    data
+    messages {
+      field
+      message
+    }
+  }
+}

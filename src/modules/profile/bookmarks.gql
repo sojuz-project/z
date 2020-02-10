@@ -1,0 +1,7 @@
+query{
+  bookmarks {
+    id
+    post_title
+    post_name
+  }
+}

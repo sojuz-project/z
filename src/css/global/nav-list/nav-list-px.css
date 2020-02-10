@@ -1,0 +1,171 @@
+/** 
+  Horizontal/Vertical Lists
+*/
+
+
+/**
+  @atom *Any 
+  @modifiers .nav-h-list
+*/
+.nav-v-list > *{
+  display:flex;
+}
+
+/**
+  @atom *Any 
+  @modifiers .nav-h-list
+*/
+.nav-h-list{
+  display: flex;
+  flex-wrap: wrap;
+  height:100%;
+}
+/**
+  @atom .nav-v-list .block 
+  @modifiers .nav-h-list
+*/
+.nav-v-list .block{
+  line-height: inherit;
+}
+/**
+  @atom .nav-v-list 
+  @pseudo childrens
+*/
+.nav-v-list > *{
+  padding: 0;
+  white-space: nowrap;
+}
+
+
+/**
+  @atom .nav-h-list 
+  @modifiers .closed
+  @pseudo childrens
+*/
+.nav-h-list > *{
+  display:flex;
+}
+/**
+  @atom .nav-v-list 
+  @modifiers .closed
+  @pseudo childrens
+*/
+.nav-v-list > *{
+  display:flex;
+  
+}
+.nav-h-list.nav-middle > * a{
+  display: flex;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+/** ul.nav-h-list > li ul */
+.nav-h-list > * ul{
+  margin: 0;
+  padding: 0;
+ 
+}
+/** ul.nav-h-list > li ul li */
+.nav-h-list > * ul li{
+  border: 0;
+}
+/** ul.nav-h-list > li */
+.nav-h-list > *:last-of-type{
+  border-right: none;
+}
+
+
+
+/** Dropdown/Submenu */
+.dropdown{
+  position: relative;
+}
+.dropdown a{
+  cursor:pointer;
+}
+.dropdown-mask{
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:100;
+}
+.dropdown .nav-sub{
+  position:absolute;
+  z-index:102;
+}
+.dropdown.left .nav-sub{
+  left: 0;
+}
+.dropdown.right .nav-sub{
+  right: 0;
+}
+
+/** extra bold first level*/
+/**
+  @atom .nav-v-list
+  @modifiers .first-nav-bold 
+  @pseudo childrens
+*/
+.nav-v-list.first-nav-bold li:first-of-type a,
+.nav-h-list.first-nav-bold li:first-of-type a {
+  font-weight: bold;
+}
+/** extra up first level*/
+/**
+  @atom .nav-v-list
+  @modifiers .first-nav-up
+  @pseudo childrens
+*/
+.nav-v-list.first-nav-up li:first-of-type a,
+.nav-h-list.first-nav-up li:first-of-type a {
+  font-size: 110%;
+  line-height: 200%;
+}
+.nav-h-list a{
+  line-height: 150%;
+}
+nav svg{
+  vertical-align: middle;
+  height: 100%;
+  min-width:20px;
+}
+.NavItem a span:nth-child(2) {
+  margin-left: 10px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .nav-h-list li, .nav-v-list li{
+    font-size:large;
+  }
+  .nav-h-list.mobile > *{
+   flex: 0 0 100%;
+  }
+  .nav-h-list.mobile.mobile-2-col{
+   flex: 0 0 50%;
+  }
+  .nav-h-list.inner-border.mobile > *{
+    border-bottom: 1px solid #ccc;
+    border-right:0;
+  }
+  .dropdown .nav-sub{
+    left: 0;
+    position: fixed;
+  }
+  .dropdown-bottom .nav-sub{
+    bottom:0;
+   }
+}
+
+

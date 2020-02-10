@@ -1,0 +1,15 @@
+query {
+  get_downloads {
+    download_id
+    download_url
+    product_id
+    product_name
+    download_name
+    order_id
+    order_key
+    access_expires
+    access_expires_gmt
+    file
+    _links
+  }
+}

@@ -1,12 +1,7 @@
-<template>
-  <component
-    :is="tag"
-  >
-    <span
-      :style="{backgroundColor:bg}"
-      v-html="title"
-    >
-      {{ title }}
+<template functional>
+  <component :is="props.i === 0 ? 'h1' : 'h2'">
+    <span :style="{ backgroundColor: props.bg }" v-html="props.title">
+      {{ props.title }}
     </span>
   </component>
 </template>
@@ -16,21 +11,16 @@ export default {
   props: {
     i: {
       type: Number,
-      default: 0
+      default: 0,
     },
     bg: {
       type: String,
-      default: '#fff'
+      default: '#fff',
     },
     title: {
       type: String,
-      default: 'Head section title'
-    }
+      default: 'Head section title',
+    },
   },
-  computed: {
-    tag() {
-      return this.i === 0 ? 'h1' : 'h2'
-    }
-  }
-}
+};
 </script>

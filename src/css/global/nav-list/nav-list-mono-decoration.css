@@ -1,0 +1,127 @@
+/**
+  @atom .nav-v-list
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-v-list{
+  border-top: 1px solid #ccc;
+}
+/**
+  @atom .nav-v-list
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-v-list > *{
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/**
+  @atom .nav-v-list 
+  @modifiers .closed
+  @pseudo childrens
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-v-list.closed{
+  border-left: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
+}
+/**
+  @atom .nav-h-list 
+  @modifiers .closed
+  @pseudo childrens
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-h-list.closed{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+/**
+  @atom .nav-v-list, .nav-h-list
+  @pseudo childrens hover
+*/
+.nav-h-list > *:hover,
+.nav-v-list > *:hover{
+  background-color: #cacaca6b;
+}
+
+/**
+  @atom .nav-v-list
+  @pseudo childrens children
+  @modifiers .nuxt-link-active
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-v-list > li > .nuxt-link-active{
+  border-left: 4px solid #000;
+}
+
+/**
+  @atom .nav-h-list
+  @pseudo childrens children
+  @modifiers .nuxt-link-active
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-h-list > li > .nuxt-link-active{
+  border-top: 4px solid #000;
+  margin-top: -2px;
+}
+
+/**
+  @atom .nav-bd-top
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-bd-top{
+  border-top: 1px solid #ccc;
+}
+/**
+  @atom .nav-bd-bottom
+  @markup
+    duplicated in decorators/borders
+    ```
+*/
+.nav-bd-bottom{
+  border-bottom: 1px solid #ccc;
+}
+/**
+  @atom .nav-v-list 
+  @modifiers .inner-border
+  @pseudo childrens
+*/
+.nav-v-list.inner-border > *{
+  border-bottom: 1px solid #ccc;
+}
+/**
+  @atom .nav-h-list 
+  @modifiers .inner-border
+  @pseudo childrens
+*/
+.nav-h-list.inner-border > *{
+  border-right: 1px solid #ccc;
+}
+
+/** dark element */
+/** ul.nav-v-list > li.dark */
+.nav-v-list > *.dark{
+  background-color: #000;
+}
+.nav-v-list > *.dark a{
+  color: #fff;
+}
+.dropdown-mask{
+  background-color: #0000009d;
+}
+.dropdown.is-active{
+  background-color:#eee;
+}

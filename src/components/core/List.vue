@@ -1,21 +1,19 @@
-<template>
-  <div v-html="innerHtml">
-    {{ innerHtml }}
-  </div>
+<template functional>
+  <div :class="[data.class, props.blockAttrs.className]" v-html="props.innerHtml" />
 </template>
 
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
     innerHtml: {
       type: String,
-      default: () => '',
+      default: '',
     },
   },
 };
 </script>
-<style src="styleBase/core/core-list.css"></style>
+<style src="~/css/core/core-list.css"></style>

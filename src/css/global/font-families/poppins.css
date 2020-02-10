@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../../css/fonts/Poppins-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../../css/fonts/Poppins-Bold.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../../css/fonts/Poppins-Black.woff2) format('woff2');
+}
+ /**
+  @atom body 
+*/
+body{
+  font-family: 'Poppins', Arial, sans-serif;
+}

@@ -1,0 +1,17 @@
+.smooth-enter-active {
+  animation: smooth-out .2s ease-out;
+  transform-origin: top center;
+}
+
+.smooth-leave-active {
+  animation: smooth-out .2s ease-in;
+  transform-origin: top center;
+}
+@keyframes smooth-in {
+  0% { transform: scale(0.96); opacity: 0.1; }
+  100% { transform: initial; opacity: 1; }
+}
+@keyframes smooth-out {
+  0% { transform: initial; opcaity: 1 }
+  100% { transform: scale(1.04); opacity: 0.05; }
+}

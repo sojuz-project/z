@@ -1,0 +1,13 @@
+query search( $query:String = "Mockup"){
+	suggest( query: $query ) {
+    post_title {
+       text
+        offset
+        length
+        options {
+          text
+          score
+        }
+    }
+  }
+}

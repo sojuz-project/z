@@ -1,5 +1,5 @@
 <template>
-  <div v-html="innerHtml">
+  <div :class="[blockAttrs.className]" v-html="innerHtml">
     {{ innerHtml }}
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
@@ -18,4 +18,4 @@ export default {
   },
 };
 </script>
-<style src="styleBase/core/core-quote.css"></style>
+<style src="~/css/core/core-quote.css"></style>

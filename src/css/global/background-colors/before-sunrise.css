@@ -1,0 +1,136 @@
+/* 
+  BG colors 
+  https://coolors.co/f1dac4-a69cac-474973-161b33-0d0c1d
+*/
+
+/**
+  @atom .has-primary-background-color
+  @markup
+    .has-primary-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-primary-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-primary-background-color{
+  background-color: #474973;
+}
+/**
+  @atom .has-secondary-background-color
+  @markup
+    .has-secondary-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-secondary-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-secondary-background-color{
+  background-color: #161B33
+}
+/**
+  @atom .has-dark-gray-background-color
+  @markup
+    .has-dark-gray-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-dark-gray-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-dark-gray-background-color{
+  background-color: #0D0C1D
+}
+
+/**
+  @atom .has-light-gray-background-color
+  @markup
+    .has-light-gray-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-light-gray-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-light-gray-background-color{
+  background-color: #A69CAC;
+}
+
+/**
+  @atom .has-white-background-color
+  @markup
+    .has-white-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-white-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-white-background-color{
+  background-color: #F1DAC4;
+}
+
+/**
+  @atom .has-default-background-color
+  @markup
+    .has-default-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-default-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-default-background-color{
+  background-color: #fff;
+}
+
+/**
+  @atom .has-default-background-color
+  @modifiers .wp-block-button
+  @markup
+    .has-default-background-color for button block is dark!
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="wp-block-button has-default-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.wp-block-button.has-default-background-color{
+  background-color: #161B33;
+}

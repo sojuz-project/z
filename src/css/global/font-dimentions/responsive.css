@@ -1,0 +1,85 @@
+/* 
+  Font sizes 
+*/
+
+/**
+  @atom H1 
+*/
+h1{
+  font-size: calc(5vw - .15em);
+  line-height: calc(5vw - .15em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+/**
+  @atom H2
+*/
+h2{
+  font-size: calc(3vw - .1em);
+  line-height: calc(4vw - .1em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+
+/**
+  @atom H3, H4, H5
+*/
+h3, h4, h5{
+  font-weight: 600;
+}
+
+/**
+  @atom .has-normal-font-size
+*/
+.block,
+.has-normal-font-size
+{
+  font-size: calc(1.85vw - .08em);
+  line-height: calc(3vw - .075em);
+}
+
+/**
+  @atom .has-huge-font-size
+*/
+.has-huge-font-size{
+  font-size: calc(3vw - .1em);
+  line-height: calc(4vw - .1em);
+  padding-top: calc(1vw - .025em);
+  padding-bottom: calc(1vw - .025em);
+  font-weight: 600;
+}
+
+/**
+  @atom .has-large-font-size, H3
+*/
+h3,
+.has-large-font-size,
+.has-large-font-size ul{
+  font-size: calc(2.5vw - .08em);
+  line-height: calc(3.5vw - .08em);
+  font-weight: 600;
+}
+
+/**
+  @atom .has-small-font-size, H4
+*/
+h4,
+.has-small-font-size ul,
+.has-small-font-size{
+  font-size: calc(1.5vw - .05em);
+  line-height: calc(2vw - .05em);
+}
+
+/**
+  @atom has-ultrasmall-font-size, H5, A
+*/
+a,
+h5,
+.has-ultrasmall-font-size ul,
+.main-menu,
+.has-ultrasmall-font-size{
+  font-size: calc(1.02vw );
+  line-height: calc(1.5vw );
+}

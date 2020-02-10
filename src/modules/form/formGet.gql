@@ -1,0 +1,9 @@
+query form($name: String!) {
+  form(name: $name) {
+    title
+    action
+    active
+    fields
+    modified
+  }
+}

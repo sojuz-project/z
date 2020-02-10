@@ -1,0 +1,6 @@
+query attachments($id: Int!) {
+  queryPost(id: $id) {
+    ID
+    post_meta(fields: [_wp_attachment_metadata, location, fullLocation])
+  }
+}

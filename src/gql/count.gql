@@ -1,0 +1,3 @@
+query count($post_type: [String] = ["post"], $terms: [String] = [] ){
+  count(post_type:$post_type, terms:$terms)
+}

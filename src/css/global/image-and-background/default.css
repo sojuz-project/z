@@ -1,0 +1,60 @@
+/**
+  @atom .contain-top
+  @modifiers .layout
+  @markup
+    background image display as original in top
+    ```
+  @example
+    <main>
+      <div class="layout contain-top">
+        
+      </div>
+    </main>
+    ```
+*/
+.layout.contain-top{
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/**
+  @atom .contain-bottom
+  @modifiers .layout
+  @markup
+    background image display as original in bottom
+    ```
+  @example
+    <main>
+      <div class="layout contain-bottom">
+        
+      </div>
+    </main>
+    ```
+*/
+.layout.contain-bottom{
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/**
+  @atom .cover-fixed
+  @modifiers .layout
+  @markup
+    background image fill as cover
+    ```
+  @example
+    <main>
+      <div class="layout cover-fixed">
+        
+      </div>
+    </main>
+    ```
+*/
+.layout.cover-fixed{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}

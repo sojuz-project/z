@@ -1,0 +1,247 @@
+/** DIMENTIONS */
+
+/**
+  @atom .pad-XXL-h 
+  @markup
+    Horizontal 2extra large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XXL-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XXL-h, .pad-XXL-h-nav a {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+/**
+  @atom .pad-XL-h 
+  @markup
+    Horizontal extra large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XL-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XL-h, .pad-XL-h-nav a {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/**
+  @atom .pad-L-h
+  @markup
+    Horizontal large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-L-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-L-h, .pad-L-h-nav a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/**
+  @atom .pad-M-h
+  @markup
+    Horizontal medium padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-M-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-M-h, .pad-M-h-nav a {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/**
+  @atom .pad-S-h
+  @markup
+    Horizontal small padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-S-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-S-h, .pad-S-h-nav a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/**
+  @atom .pad-XS-h
+  @markup
+    Horizontal extra small padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XS-h">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XS-h, .pad-XS-h-nav a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/**
+  @atom .pad-XXL-v
+  @markup
+    Vertical 2extra large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XXL-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XXL-v, .pad-XXL-v-nav a {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/**
+  @atom .pad-XL-v
+  @markup
+    Vertical extra large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XL-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XL-v, .pad-XL-v-nav a {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/**
+  @atom .pad-L-v
+  @markup
+    Vertical large padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-L-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-L-v, .pad-L-v-nav a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/**
+  @atom .pad-M-v
+  @markup
+    Vertical medium padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-M-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-M-v, .pad-M-v-nav a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/**
+  @atom .pad-S-v
+  @markup
+    Vertical small padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-S-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-S-v, .pad-S-v-nav a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/**
+  @atom .pad-XS-v
+  @markup
+    Vertical extra small padding added to wrapper container.
+    ```
+  @example
+    <main>
+      <div class="doc-empty-container pad-XS-v">
+        <div class="doc-filled-container ">
+          Inner Container
+        </div>
+      </div>
+    </main>
+    ```
+*/
+.pad-XS-v, .pad-XS-v-nav a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/**
+  @atom coverImg ???
+*/
+.coverImg{
+  height:100%;
+  object-fit: cover;
+}

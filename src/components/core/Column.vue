@@ -1,6 +1,16 @@
-<template>
+<template functional>
   <!-- classes alignfull has-background-dim has-parallax -->
-  <div :style="attrs.style">
+  <div
+    :class="[
+      data.class,
+      props.blockAttrs.verticalAlignment ? 'v-align-center' : '',
+      !props.blockAttrs.width ? 'columns-defalult' : null,
+    ]"
+    :style="[
+      props.blockAttrs.style,
+      props.blockAttrs.width ? { flex: `0 0 calc(${props.blockAttrs.width}% - 5%` } : null,
+    ]"
+  >
     <slot />
   </div>
 </template>
@@ -8,14 +18,14 @@
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
-    innerHtml: {
-      type: String,
-      default: () => '',
-    },
+    // innerHtml: {
+    //   type: String,
+    //   default: '',
+    // },
   },
 };
 </script>

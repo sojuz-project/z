@@ -1,0 +1,43 @@
+/**
+  @atom .wp-block-button, .wp-block-button button
+*/
+.wp-block-button button,
+.wp-block-button{
+  box-sizing: border-box;
+  padding-bottom: 60px;
+  padding-top: 40px;
+}
+/**
+  @atom .wp-block-button a, button.wp-block-button
+*/
+.wp-block-button a,
+button.wp-block-button{
+  background-color: #000;
+  border-radius: 10vw;
+  font-weight: bold;
+  padding: 1vw 3vw;
+  text-decoration: none;
+  cursor:pointer;
+  outline: none;
+  border-width: 2px;
+  
+}
+/**
+  @atom .button.wp-block-button, .wp-block-button a 
+  @modifiers .is-style-outline
+*/
+button.wp-block-button.is-style-outline,
+.wp-block-button.is-style-outline a{
+  border-width: 2px;
+  border-style: solid;
+  background: transparent;
+}
+
+
+/**
+  @atom .wp-block-button 
+  @modifiers .aligncenter ???
+*/
+.wp-block-button.aligncenter{
+  text-align: center
+}

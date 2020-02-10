@@ -1,0 +1,14 @@
+figure.coreimage{
+  width: 100%;
+  /* width: calc(100% + 30px); */
+}
+figure.coreimage.default img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+
+

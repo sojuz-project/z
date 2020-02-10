@@ -1,0 +1,5 @@
+query search($ids: [Int!]!) {
+  search(ids: $ids) {
+    post_meta(fields: [_wp_attachment_metadata, location])
+  }
+}

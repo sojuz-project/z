@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="48px" viewBox="0 0 37 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>3. Icon/Document</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="yellow" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-377.000000, -125.000000)" fill="#000000">
+            <g id="3.-Icon/Document" transform="translate(371.000000, 125.000000)">
+                <g id="icons8-document" transform="translate(6.000000, 0.000000)">
+                    <path d="M0,0 L0,48 L36.9230769,48 L36.9230769,12.1730769 L36.4038462,11.5961538 L25.3269231,0.519230769 L24.75,0 L0,0 Z M3.69230769,3.69230769 L22.1538462,3.69230769 L22.1538462,14.7692308 L33.2307692,14.7692308 L33.2307692,44.3076923 L3.69230769,44.3076923 L3.69230769,3.69230769 Z M25.8461538,6.34615385 L30.5769231,11.0769231 L25.8461538,11.0769231 L25.8461538,6.34615385 Z M9.23076923,18.4615385 L9.23076923,22.1538462 L27.6923077,22.1538462 L27.6923077,18.4615385 L9.23076923,18.4615385 Z M9.23076923,25.8461538 L9.23076923,29.5384615 L27.6923077,29.5384615 L27.6923077,25.8461538 L9.23076923,25.8461538 Z M9.23076923,33.2307692 L9.23076923,36.9230769 L27.6923077,36.9230769 L27.6923077,33.2307692 L9.23076923,33.2307692 Z" id="Shape" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

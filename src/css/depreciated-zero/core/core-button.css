@@ -1,0 +1,37 @@
+.wp-block-button button,
+.wp-block-button{
+  box-sizing: border-box;
+  padding-bottom: 60px;
+  padding-top: 40px;
+}
+
+.wp-block-button a,
+button.wp-block-button{
+  background-color: #000;
+  border-radius: 10vw;
+  font-weight: bold;
+  padding: 1vw 3vw;
+  text-decoration: none;
+  cursor:pointer;
+  outline: none;
+  border-width: 2px;
+  
+}
+
+button.wp-block-button.is-style-outline,
+.wp-block-button.is-style-outline a{
+  border-width: 2px;
+  border-style: solid;
+  background: transparent;
+}
+
+
+button.wp-block-button.is-style-squared,
+.wp-block-button.is-style-squared a{
+  border-radius: 0;
+}
+
+
+.wp-block-button.aligncenter{
+  text-align: center
+}

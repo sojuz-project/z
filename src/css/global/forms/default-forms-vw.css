@@ -1,0 +1,15 @@
+
+
+form input{
+  padding: .65vw;
+  margin-bottom: 1vw;
+  width:100%;
+  border: 1px solid #ccc;
+  display:block;
+}
+.search input{
+  border:0;
+  border-bottom:1px solid rgb(230, 230, 230);
+  width:100%;
+  outline: 0;
+}

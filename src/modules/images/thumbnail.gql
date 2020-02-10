@@ -1,0 +1,10 @@
+query attachments($ids: [Int!]!) {
+  attachments(ids: $ids) {
+    colors
+    url
+    sizes {
+      width
+      url
+    }
+  }
+}

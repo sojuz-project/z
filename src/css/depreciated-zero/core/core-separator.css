@@ -1,0 +1,31 @@
+
+
+.coreseparator {
+    border: none;
+    border-bottom: 4px solid #000;
+    margin: 1.65em auto;
+    width: 2.25em;
+    padding:0;
+}
+
+.coreseparator.is-style-wide{
+  margin-left: auto;
+  width: 100%;
+  border-bottom: 4px solid #000;
+  padding:0;
+}
+
+.coreseparator.is-style-dots {
+    border: none;
+    text-align: center;
+    margin-left: auto;
+    width: 100%;
+}
+.coreseparator.is-style-dots:before {
+    content: "\00b7 \00b7 \00b7";
+    color: #191e23;
+    font-size: 2em;
+    letter-spacing: 2em;
+    padding-left: 2em;
+    font-family: serif;
+}

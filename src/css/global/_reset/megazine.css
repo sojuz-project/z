@@ -1,0 +1,46 @@
+/* ---------- Reset styles ---------- */
+
+* {
+	margin:0;
+	padding:0;
+    box-sizing: border-box;
+}
+
+img, fieldset {
+	border:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: 600;
+}
+
+header, hgroup, footer, aside, nav, menu, section, article, figure, object, iframe {
+	display:block;
+}
+
+ul li {
+	list-style:none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+
+a, object ,input:focus, select:focus, textarea:focus {
+	outline:none;
+}
+button {
+	border: none;
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding:0;
+	border:0;
+}

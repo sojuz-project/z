@@ -1,0 +1,3 @@
+mutation update_cart($itemKey: Int!, $quantity: Int!, $cart_key: String!) {
+  update_cart(item: { itemKey: $itemKey, quantity: $quantity, cart_key: $cart_key })
+}

@@ -1,0 +1,10 @@
+.wp-block-pullquote{
+  border-top:2px solid #000;
+  border-bottom:2px solid #000;
+  padding: 5% 0;
+
+}
+.wp-block-pullquote p{
+  font-size:24px;
+  margin-bottom:14px;
+}

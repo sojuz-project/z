@@ -1,18 +1,13 @@
 <template>
   <img
-    v-if="item.subtype!=='svg+xml' || !item.sizes"
+    v-if="item.subtype !== 'svg+xml' || !item.sizes"
     :class="['entry-thumbnail lazyload', size]"
     :data-srcset="generateSrcset(item.sizes)"
     :data-sizes="width"
     :data-src="item.url"
     :alt="item.alt"
-  >
-  <img
-    v-else
-    :class="['entry-thumbnail lazyload', size]"
-    :data-src="item.url"
-    :alt="item.alt"
-  >
+  />
+  <img v-else :class="['entry-thumbnail lazyload', size]" :data-src="item.url" :alt="item.alt" />
 </template>
 
 <script>
@@ -21,25 +16,25 @@ export default {
   props: {
     item: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     width: {
       type: String,
-      default: '100vw'
+      default: '100vw',
     },
     size: {
       type: String,
-      default: 'standard'
-    }
+      default: 'standard',
+    },
   },
   methods: {
-    generateSrcset: function (items) {
-      const srcSet = []
+    generateSrcset: function(items) {
+      const srcSet = [];
       for (const item in items) {
-        srcSet.push(`${items[item].url} ${items[item].width}w`)
+        srcSet.push(`${items[item].url} ${items[item].width}w`);
       }
-      return srcSet.join(', ')
-    }
+      return srcSet.join(', ');
+    },
     // generateSizes: function (items) {
     //   const sizes = []
     //   for (const item in items) {
@@ -47,6 +42,6 @@ export default {
     //   }
     //   return sizes.join(', ')
     // }
-  }
-}
+  },
+};
 </script>

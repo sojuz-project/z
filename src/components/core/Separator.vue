@@ -1,12 +1,12 @@
 <template>
   <!-- classes alignfull has-background-dim has-parallax -->
-  <hr :class="[attrs.className ? attrs.className : '']" />
+  <hr :class="[blockAttrs.className ? blockAttrs.className : '']" />
 </template>
 
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
@@ -17,4 +17,4 @@ export default {
   },
 };
 </script>
-<style src="styleBase/core/core-separator.css"></style>
+<style src="~/css/core/core-separator.css"></style>

@@ -1,0 +1,18 @@
+figure.coreimage{
+  width: 100%;
+  /* width: calc(100% + 30px); */
+  margin-bottom: 15px;
+}
+figure.coreimage img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+  
+
+figure.coreimage.aligncenter{
+  text-align: center;
+}
+
+
+

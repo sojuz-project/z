@@ -1,29 +1,5 @@
-<template>
-  <svg
-    id="i-cart"
-    :stroke-width="`${attrs.weight / 300}`"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
-    width="32"
-    height="32"
-    fill="none"
-    stroke="currentcolor"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M6 6 L30 6 27 19 9 19 M27 23 L10 23 5 2 2 2" />
-    <circle cx="25" cy="27" r="2" />
-    <circle cx="12" cy="27" r="2" />
-  </svg>
+<template functional>
+  <path
+    d="M 2,2 5.75,5.1503906 5,2 Z M 5.75,5.1503906 7.5,12.5 9,19 H 9.046875 L 10,23 H 27 L 22.238281,19 H 27 L 30,6 H 6.7617188 Z M 12,25 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z m 13,0 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
+  />
 </template>
-<script>
-/* https://raw.githubusercontent.com/danklammer/bytesize-icons/master/dist/icons/folder.svg */
-export default {
-  props: {
-    attrs: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
-};
-</script>

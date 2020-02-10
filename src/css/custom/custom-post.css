@@ -1,0 +1,5 @@
+.ChildPost > .coreheading,
+.ChildPost > .coreparagraph{
+  max-width: 928px;
+  margin: 0 auto;
+}

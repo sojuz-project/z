@@ -1,0 +1,3 @@
+mutation setLogged($isLogged: Boolean!) {
+  setLogged(isLogged: $isLogged) @client
+}

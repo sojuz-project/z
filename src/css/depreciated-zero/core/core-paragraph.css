@@ -1,0 +1,9 @@
+.corecolumns .coreparagraph{
+  margin-left:15px;
+}
+.coreparagraph{
+  padding-bottom: 10px;
+}
+p.has-background{
+  padding: 10px;
+}

@@ -1,0 +1,71 @@
+
+/**
+  @atom .block 
+  @markup
+    Block native padding (only first level block)
+    ```
+  @example
+    <main class="doc-empty-container">
+        <div class="doc-filled-container block">
+            Gutenberg block
+        </div>
+    </main>
+    ```
+*/
+main > .ChildPost > .block{
+    margin-bottom:30px;
+}
+
+/**
+  @atom .coreheading, .coreparagraph 
+  @markup
+    gutenberg native heading and paragraph block (only first level block)
+    extended bottom padding from .block
+    ```
+  @example
+    <main class="doc-empty-container">
+        <h2 class="doc-filled-container block heading">
+            Example heading H2
+        </h2>
+    </main>
+    <br><br>
+    <main class="doc-empty-container">
+        <p class="doc-filled-container block paragraph">
+            Example lorem ipsum paragraph text
+        </p>
+    </main>
+    ```
+*/
+main > .coreheading, 
+main > .ChildPost > .coreheading, 
+main > .coreparagraph,
+main > .ChildPost > .coreparagraph {
+    margin-top: 38px;
+}
+
+figure.coreimage{
+    margin-bottom: 15px;
+}
+header figure.coreimage{
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    /**
+        @atom [Mobile] *Any 
+        @modifiers .desktop-only
+    */
+    .desktop-only{
+        display: none;
+    }
+    /**
+        @atom [Mobile] .coreheading, .coreparagraph 
+    */
+    main > .coreheading, 
+    main > .ChildPost > .coreheading,
+    main > .coreparagraph,
+    main > .ChildPost > .coreparagraph {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

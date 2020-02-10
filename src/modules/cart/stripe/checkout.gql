@@ -1,0 +1,3 @@
+mutation checkout($order: NewOrderInput!) {
+  checkout(order: $order)
+}

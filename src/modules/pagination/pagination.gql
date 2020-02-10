@@ -1,0 +1,6 @@
+  query posts(
+      $ptype: [String] = ["product"], 
+    	$pterms: [String]
+  ) {
+    		QlPagination: count(post_type: $ptype, terms: $pterms)
+   }

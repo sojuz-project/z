@@ -1,0 +1,12 @@
+
+.corelist ul{
+  margin: 0;
+  margin-left:15px;
+}
+.corelist li{
+  margin: 0 0 7px;
+  list-style: disc
+}
+.corelist li:last-of-type{
+  margin: 0 0 3vw;
+}

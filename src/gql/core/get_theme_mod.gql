@@ -1,0 +1,16 @@
+query {
+  get_theme_mod(
+    names: [
+      "custom_logo",
+      "header_color",
+      "nav_menu_locations",
+      "elements_align",
+      "display_mode",
+      "background_image",
+      "background_class",
+      "footer_copy",
+      "footer_template_slug",
+      "header_template_slug"
+      ]
+    )
+}

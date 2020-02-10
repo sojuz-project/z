@@ -1,0 +1,14 @@
+#panel{
+  display: grid;
+  grid-template-columns: 1fr .2fr 4fr;
+  padding: 0 8vw;
+  margin-top:4vw;
+}
+#panel .panel-sidebar{
+  align-self: baseline;
+  position: sticky;
+  top: 9vw;
+}
+#panel .panel-body{
+  grid-column-start: 3
+}

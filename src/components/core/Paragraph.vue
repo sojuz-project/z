@@ -1,22 +1,19 @@
-<template>
-  <div :class="attrs.className" :style="attrs.style">
-    <div class="overlay"></div>
-    <div v-html="innerHtml" class="text">{{ innerHtml }}</div>
-  </div>
+<template functional>
+  <div :class="[data.class, props.blockAttrs.className]" :style="props.blockAttrs.style" v-html="props.innerHtml" />
 </template>
 
 <script>
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
     },
     innerHtml: {
       type: String,
-      default: () => '',
+      default: '',
     },
   },
 };
 </script>
-<style src="styleBase/core/core-paragraph.css"></style>
+<style src="~/css/core/core-paragraph.css"></style>

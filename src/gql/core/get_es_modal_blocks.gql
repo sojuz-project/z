@@ -1,0 +1,6 @@
+query posts($slug: String = "", $id: Int = 0) {
+  modalBlocks: queryPost(post_name: $slug, id: $id) {
+    id:ID
+    blocks
+  }
+}

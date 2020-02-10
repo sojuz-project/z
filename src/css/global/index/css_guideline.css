@@ -1,0 +1,57 @@
+/**
+  @atom Global css manual 
+  @markup
+    <p>Welcome on SOJUZ Global CSS manual.</p>
+    
+    The documentation consists of a list of topics like aligments or background collors.
+    All topics contain a collection of css files that you can easily compose to change.
+    A single collection consists of a description of atomic css classes with examples
+    <br><br><br><br><hr>
+    <h3>Atom example</h3>
+
+    Atom, is reusable css class, coud added to all components, for example:
+    ```
+*/
+{}
+/**
+  @atom .has-default-background-color
+  @markup
+  .has-default-background-color atomic class set default backgrond color, chosse in one of many backgroundcolors collections
+  ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-default-background-color" style="background-color:#fff">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    <br><br><br><br><hr>
+    <h3>Modifier exerption example</h3>
+    Modifier extended custom parent element for atom display options:
+  ```
+*/
+.has-white-background-color{
+  background-color: #ffffff
+}
+
+/**
+  @atom .has-default-background-color
+  @modifiers .wp-block-button
+  @markup
+    .has-default-background-color for button is modyfied to dark!
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="wp-block-button has-default-background-color" style="background-color: #32373c;">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.wp-block-button.has-default-background-color{
+  background-color: #32373c;
+}
+

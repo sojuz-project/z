@@ -1,0 +1,3 @@
+query {
+  options(option_names: ["page_on_front"])
+}

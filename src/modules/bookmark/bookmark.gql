@@ -1,0 +1,3 @@
+mutation bookmark($id: Int!) {
+  bookmark(post: $id)
+}

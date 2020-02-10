@@ -1,0 +1,14 @@
+
+
+input{
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  display: block;
+  outline: 0;
+  font-size:18px;
+}
+.search input{
+  width:100%;
+}

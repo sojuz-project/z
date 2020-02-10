@@ -1,0 +1,3 @@
+mutation updateToastMessage($toast: String!) {
+  updateToastMessage(toast: $toast) @client
+}

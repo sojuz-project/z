@@ -1,0 +1,24 @@
+/**
+  @atom TODO - rebuild it to new blocks header 
+*/
+#main-header.sticky-mode{
+  position:sticky;
+  top:0px;
+  z-index:100;
+}
+#main-header.absolute-mode{
+  position:absolute;
+  top:0px;
+  z-index:100;
+  width:100%;
+}
+#main-header nav{
+  flex:1;
+}
+#main-header nav ul{
+  justify-content: flex-end;
+}
+#main-header .main-logo,
+#main-header .main-logo img{
+  max-width: 100%;
+}
