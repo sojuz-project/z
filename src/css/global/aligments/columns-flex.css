@@ -1,0 +1,15 @@
+/* .has-2-columns{
+  display:flex;
+  flex-wrap: wrap;
+}
+.has-2-columns > *{
+   flex: 0 0 calc(50%);
+}
+
+.has-3-columns{
+  display:flex;
+  flex-wrap: wrap;
+}
+.has-3-columns > *{
+   flex: 0 0 calc(33.3%);
+} */

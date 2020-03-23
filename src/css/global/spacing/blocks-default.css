@@ -12,6 +12,23 @@
     </main>
     ```
 */
+main > .block{
+    padding-top:49px;
+    padding-bottom:49px;
+}
+/**
+  @atom .block 
+  @markup
+    Block native padding (only first level block)
+    ```
+  @example
+    <main class="doc-empty-container">
+        <div class="doc-filled-container block">
+            Gutenberg block
+        </div>
+    </main>
+    ```
+*/
 main > .ChildPost > .block{
     margin-bottom:30px;
 }
@@ -36,16 +53,23 @@ main > .ChildPost > .block{
     </main>
     ```
 */
-main > .coreheading, 
 main > .ChildPost > .coreheading, 
 main > .coreparagraph,
 main > .ChildPost > .coreparagraph {
-    margin-top: 38px;
+    margin-top: 49px;
 }
 
+
+
+/**
+  @atom figure
+*/
 figure.coreimage{
-    margin-bottom: 15px;
+    margin-bottom: 19px;
 }
+/**
+  @atom header figure
+*/
 header figure.coreimage{
     margin-bottom: 0;
 }
@@ -65,7 +89,7 @@ header figure.coreimage{
     main > .ChildPost > .coreheading,
     main > .coreparagraph,
     main > .ChildPost > .coreparagraph {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 }

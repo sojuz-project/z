@@ -1,6 +1,17 @@
-<template functional>
-  <div :class="['block','group',props.blockAttrs.className, `align-${props.blockAttrs.align || 'default'}`, `has-${props.blockAttrs.backgroundColor || 'default'}-background-color`]">
-    <slot />
+<template>
+  <div
+    :class="[
+      'block',
+      'group',
+      blockAttrs.className,
+      `align-${blockAttrs.align || 'default'}`,
+      `has-${blockAttrs.backgroundColor || 'default'}-background-color`,
+    ]"
+  >
+    <nuxt-link :to="blockAttrs.url" v-if="blockAttrs.url">
+      <slot />
+    </nuxt-link>
+    <slot v-if="!blockAttrs.url" />
   </div>
 </template>
 

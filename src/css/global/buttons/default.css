@@ -7,11 +7,15 @@
   border-width: 2px;
 }
 
-.wp-block-button a{
+.wp-block-button a, .wp-block-button button{
   display:inline-block;
   padding: 20px 60px;
   text-decoration: none;
   cursor:pointer;
+  outline:0;
+  border:0;
+  width:100%;
+  text-align: center;
 }
 /**
   @atom .button.wp-block-button, .wp-block-button a 
@@ -21,5 +25,17 @@
   border-width: 2px;
   border-style: solid;
 }
+
+.wp-block-button.btn-small a, .wp-block-button.btn-small button
+{
+  padding: 10px 30px; 
+}
+
+.wp-block-button.clear a, .wp-block-button.clear button
+{
+  background: none;
+}
+
+
 
 

@@ -1,0 +1,16 @@
+.card > *{
+  margin:0;
+}
+.card > .coreparagraph{
+  margin-top:10px;
+}
+.card > .coreparagraph,
+.card > .group  .coreparagraph{
+  padding: 0 10px;
+}
+.card >  .corecolumns > .corecolumn{
+  border-top: 1px solid #00000033;
+  padding: 0 10px;
+  padding-top:10px;
+  margin-bottom:10px;
+}

@@ -15,8 +15,33 @@
 /**
   @atom .align-full
 */
-.align-full, .align-full > a {
+.align-full, .align-full > a{
    width: 100%;
+}
+
+/**
+  @atom .f-justify
+*/
+.block .f-justify{
+  justify-content: flex-end;
+}
+/**
+  @atom .f-right
+*/
+.block .f-right{
+  justify-content: flex-end;
+}
+
+/**
+  @atom .pos-absolute
+*/
+.block .pos-absolute{
+  position: absolute;
+  width: 100%;
+}
+  
+p > img{
+  vertical-align: middle;
 }
 
 /**
@@ -33,3 +58,12 @@
 img {
   width:100%;
 }
+
+.buttons{
+  display:flex;
+}
+.buttons > *{
+  flex:1;
+  
+}
+

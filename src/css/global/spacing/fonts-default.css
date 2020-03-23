@@ -1,0 +1,69 @@
+
+/**
+  @atom P 
+*/
+.coreparagraph p, p.has-small-font-size{
+  padding-bottom: 7px;
+}
+
+/**
+  @atom H1 
+*/
+h1, p.has-huge-font-size{
+  padding-bottom: 49px;
+}
+/**
+  @atom H2 
+*/
+h2, p.has-large-font-size{
+  padding-bottom: 30px;
+}
+/**
+  @atom H3 
+*/
+h3{
+  padding-bottom: 19px;
+}
+/**
+  @atom H4
+*/
+h4, p.has-normal-font-size{
+  padding-bottom: 12px;
+}
+
+/**
+  @atom .has-xsmall-font-size 
+*/
+.has-xsmall-font-size
+{
+  padding-bottom: 4px;
+}
+
+/**
+  @atom .has-large-font-size
+*/
+.has-large-font-size ul{
+
+}
+/**
+  @atom .has-small-font-size
+*/
+.has-small-font-size ul{
+
+}
+
+
+@media only screen and (max-width: 768px) {
+   /**
+        @atom [Mobile] H1 
+    */
+  h1{
+  padding-bottom: 30px;
+  }
+     /**
+        @atom [Mobile] H2 
+    */
+  h2{
+    padding-bottom: 30px;
+  }
+}

@@ -1,0 +1,105 @@
+
+/* 
+  Font sizes 
+*/
+html{
+  font: 18px/140%;
+}
+/**
+  @atom H1 
+*/
+h1{
+  font-size: 48px;
+  line-height: 120%;
+}
+/**
+  @atom H2 
+*/
+h2{
+  font-size: 36px;
+  line-height: 120%;
+}
+/**
+  @atom H3 
+*/
+h3{
+  font-size: 26px;
+}
+/**
+  @atom H4
+*/
+h4{
+  font-size: 20px;
+}
+/**
+  @atom .has-normal-font-size
+*/
+.has-normal-font-size
+{
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+}
+/**
+  @atom .has-huge-font-size 
+*/
+.has-huge-font-size{
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+}
+/**
+  @atom .has-large-font-size
+*/
+.has-large-font-size,
+.has-large-font-size ul{
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+}
+/**
+  @atom .has-small-font-size
+*/
+.has-small-font-size ul,
+.has-small-font-size{
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+}
+/**
+  @atom .has-xsmall-font-size 
+*/
+h5,
+.has-xsmall-font-size ul,
+.main-menu,
+.has-xsmall-font-size{
+  font-size: 11px;
+  line-height: 130%;
+  letter-spacing: 0.1em;
+}
+/**
+  @atom .bold
+*/
+.bold{
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px) {
+   /**
+        @atom [Mobile] H1 
+    */
+  h1{
+  font-size: 40px;
+  padding-bottom: 30px;
+  line-height: 120%;
+  }
+     /**
+        @atom [Mobile] H2 
+    */
+  h2{
+    font-size: 28px;
+    line-height: 120%;
+    padding-bottom: 30px;
+  }
+}

@@ -1,0 +1,10 @@
+.card{
+  margin:0;
+  flex:1
+}
+.card.has-3-columns {
+  flex: 0 0 calc(33%);
+}
+.card.has-2-columns {
+  flex: 0 0 calc(33%);
+}

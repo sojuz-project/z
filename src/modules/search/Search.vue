@@ -1,18 +1,10 @@
 <template>
-  <div :class="[blockAttrs.className, 'animated-search']">
-    <p @click="toggleInput" v-if="!inputMode">
-      <span>{{ currentText }}</span>
-      <span class="cursor">|</span>
-    </p>
-    <div class="flex search">
-      <input v-model="search" @keyup.enter="sendSearchForm" @input="runQuery" v-show="inputMode" autofocus />
-      <!-- <button @click="sendSearchForm" v-if="inputMode" type="submit">send</button> -->
-    </div>
-    <div v-if="suggestions.length > 0" class="suggestions nav-v-list inner-border closed l-hg-300 p-0-20i">
-      <p v-for="(item, i) in suggestions" :key="i">
-        <nuxt-link :to="`/search/${item.text}`">
-          {{ item.text }}
-        </nuxt-link>
+  <div>
+    <input :value="value" @input="runQuery" :required="required" :placeholder="placeholder" :autofocus="autofocus" />
+
+    <div v-if="suggestions.length > 0" class="suggestions">
+      <p v-for="(item, i) in suggestions" @click="(_) => suggestionClick(item.text)" :key="i">
+        {{ item.text }}
       </p>
     </div>
   </div>
@@ -22,6 +14,22 @@
 export default {
   name: 'SearchInput',
   props: {
+    value: {
+      type: String,
+      default: null,
+    },
+    placeholder: {
+      type: String,
+      default: null,
+    },
+    required: {
+      type: Boolean,
+      default: null,
+    },
+    autofocus: {
+      type: Boolean,
+      default: null,
+    },
     blockAttrs: {
       type: Object,
       default: () => ({}),
@@ -31,29 +39,19 @@ export default {
     return {
       inputMode: false,
       interval: null,
-      searchText: this.blockAttrs.placecholder ? this.blockAttrs.placecholder : 'Search something',
-      currentText: '',
-      search: '',
+      // searchText: this.blockAttrs.placecholder ? this.blockAttrs.placecholder : 'Search something',
+      // currentText: '',
+      // search: '',
       suggestions: [],
     };
   },
-  mounted() {
-    setTimeout(this.textAnimation, 1500);
-  },
   methods: {
-    toggleInput() {
-      this.inputMode = !this.inputMode;
-    },
-    textAnimation() {
-      this.interval = setInterval(() => {
-        if (this.searchText === this.currentText) {
-          clearInterval(this.interval);
-        } else {
-          this.currentText += this.searchText.replace(this.currentText, '')[0];
-        }
-      }, 100);
+    suggestionClick(suggestion) {
+      this.$emit('suggestion-click', suggestion);
+      this.suggestions = [];
     },
     runQuery(e) {
+      this.$emit('input', e);
       this.$apollo
         .query({
           query: require('./suggest.gql'),
@@ -65,37 +63,6 @@ export default {
         })
         .catch((response) => console.log('apollo reeor', response));
     },
-    sendSearchForm() {
-      this.$router.push({ query: { search: this.search } });
-    },
   },
 };
 </script>
-
-<style scoped>
-.animated-search p {
-  /* padding: 10px 0; */
-  border-bottom: 1px solid #ccc;
-}
-.animated-search input {
-  margin-bottom: 0px;
-}
-.block .animated-search .suggestions {
-  margin-top: -1px;
-}
-.block .animated-search .suggestions a {
-  font-size: 14px;
-  font-weight: normal;
-}
-.cursor {
-  animation: cursor 1s steps(2, end) infinite;
-}
-@keyframes cursor {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>

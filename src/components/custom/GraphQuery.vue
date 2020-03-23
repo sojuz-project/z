@@ -1,14 +1,19 @@
-/** depreciated Query.vue and Wrapper.vue */
 <template>
-  <section>
-    <div v-if="blockParser">
-      <InnerBlock v-for="(block, key) in blockParser" :key="key" :blocks="block" />
-    </div>
+  <section
+    v-if="blockParser"
+    :class="[
+      blockAttrs.align ? `align-${blockAttrs.align}` : '',
+      blockAttrs.className,
+      blockAttrs.query ? 'has-query' : '',
+    ]"
+  >
+    <InnerBlock v-for="(block, key) in blockParser" :key="key" :blocks="block" />
   </section>
 </template>
+
 <script>
 import gql from 'graphql-tag';
-const get = (p, o) => p.reduce((xs, x) => (xs && xs[x] ? xs[x] : null), o);
+import { parseFilters, renderParentBlock, renderBlocksFromGqlRes, parseNativeFilters, get } from '~/helpers/graphQuery';
 
 export default {
   props: {
@@ -27,69 +32,48 @@ export default {
   },
   computed: {
     blockParser() {
-      return this.blocks
-        ? [
-            {
-              attrs: this.blockAttrs['component-attrs'],
-              blockName: this.blockAttrs.componentParentName ? this.blockAttrs.componentParentName : 'coregroup',
-              innerBlocks: this.blocks,
-            },
-          ]
-        : [
-            {
-              attrs: this.blockAttrs['component-attrs'],
-              blockName: this.blockAttrs.componentParentName ? this.blockAttrs.componentParentName : 'coregroup',
-            },
-          ];
+      const res = this.gqlRes;
+
+      return this.blockAttrs.componentParentName
+        ? renderParentBlock(this.blockAttrs, this.gqlRes)
+        : this.gqlRes || renderParentBlock(this.blockAttrs, null);
     },
   },
   apollo: {
-    blocks: {
-      refetchQueries: [{ query: require('~/modules/pagination/pagination.gql') }],
+    gqlRes: {
       variables() {
-        let result = {};
-        const isPaginated = ['template', 'query_paginate', 'query_filter', 'query_filter_paginate'].includes(
-          this.$route.name
-        );
-
-        return this.blockAttrs.queryVariables && isPaginated
-          ? {
-              ...this.$route.params,
-              page: this.$route.params.page ? parseInt(this.$route.params.page) : 0,
-            }
-          : {};
+        return {
+          ...this.$route.params,
+          filters: parseFilters(this.$route, this.blockAttrs),
+        };
       },
       skip() {
         return !this.blockAttrs.query;
-      },
-      update(data) {
-        const query = this.blockAttrs.queryAlias ? data[this.blockAttrs.queryAlias] : data['nq'];
-
-        return (Array.isArray(query) ? query : query ? [query] : []).map((block) => {
-          let template = JSON.stringify(this.innerBlocks);
-          const matches = {};
-          (template.match(/\{\{([^\}]*)\}\}/gm) || []).forEach((el) => {
-            console.log(template, template.match(/\{\{([^%]*)\}\}/gm))
-            matches[el] = {
-              path: el.replace(/\{\{/g, '').replace(/\}\}/g, '').split('.'),
-              value: get(el.replace(/\{\{/g, '').replace(/\}\}/g, '').split('.'), block),
-            };
-            template = template.split(el).join(matches[el].value);
-          });
-
-          return {
-            blockName: this.blockAttrs.componentItemName ? this.blockAttrs.componentItemName : 'coregroup',
-            attrs: block,
-            innerBlocks: JSON.parse(template),
-          };
-        });
       },
       query() {
         return gql`
           ${this.blockAttrs.query}
         `;
       },
+      update(data) {
+        const gqlRes = this.blockAttrs.queryAlias ? data[this.blockAttrs.queryAlias] : data['nq'];
+        const targetedRes = this.blockAttrs.resTarget ? get(this.blockAttrs.resTarget.split('.'), gqlRes) : gqlRes;
+        const blocks = renderBlocksFromGqlRes(targetedRes, this.blockAttrs, this.innerBlocks, this.$route);
+        return blocks;
+      },
     },
   },
 };
 </script>
+<style>
+.sojuzgraphquery {
+  position: relative;
+  z-index: 1;
+}
+.sojuzgraphquery .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+</style>

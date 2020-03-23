@@ -1,0 +1,83 @@
+/**
+  @atom .has-primary-color
+  @markup
+    .has-primary-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-primary-color">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-primary-color,
+.has-primary-color a{
+  color:#0073a8;
+}
+
+/**
+  @atom .has-secondary-color
+  @markup
+    .has-secondary-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-secondary-color">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-secondary-color,
+.has-secondary-color a{
+  color: #005075;
+}
+
+/**
+  @atom .has-white-color
+  @markup
+    .has-white-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-white-color">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-white-color,
+.has-white-color a{
+  color: #fff
+}
+
+/**
+  @atom .has-dark-gray-color
+*/
+.has-dark-gray-color a,
+.has-dark-gray-color{
+  color: #000
+}
+
+/**
+  @atom .has-light-gray-color
+*/
+.has-light-gray-color a,
+.has-light-gray-color{
+  color: #999
+}
+
+/**
+  @atom .corecover
+*/
+.corecover{
+  color: #fff
+}
+

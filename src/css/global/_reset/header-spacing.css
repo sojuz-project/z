@@ -1,0 +1,7 @@
+header h2, header .coreparagraph p{
+  margin:0;
+  padding:0;
+}
+header a{
+  text-decoration: none;
+}

@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li v-if="isLogged">
     <a @click="() => $loginHelpers.onLogout()" href="#">Log out</a>
   </li>
 </template>

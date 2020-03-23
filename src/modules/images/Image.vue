@@ -1,6 +1,7 @@
 <template>
   <figure :class="[blockAttrs.className, classes]" :style="color">
     <!-- <div v-if="!$apolloData.loading || !attachments" v-html="innerHtml" /> -->
+    aaa
     <img
       v-if="srcset.length"
       :data-srcset="srcset"

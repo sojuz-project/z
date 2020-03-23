@@ -1,5 +1,5 @@
 <template functional>
-  <div :class="props.blockAttrs.className" v-html="innerHtml"></div>
+  <div :class="props.blockAttrs.className" v-html="props.innerHtml"></div>
 </template>
 
 <script>

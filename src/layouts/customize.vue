@@ -1,23 +1,23 @@
 <template>
-  <PageWrapper>
-    <BlocksStatic tag-name="header" content-slug="header_template_slug" />
+  <div>
+    <!-- <BlocksStatic tag-name="header" content-slug="header" /> -->
     <ToastMessage />
     <nuxt />
-    <BlocksStatic tag-name="footer" content-slug="footer_template_slug" />
-    <div id="css_files" style="border:1px solid red;"></div>
-  </PageWrapper>
+    <!-- <BlocksStatic tag-name="footer" content-slug="footer" /> -->
+    <div id="css_files"></div>
+  </div>
 </template>
 
 <script>
-import PageWrapper from '~/components/custom/PageWrapper.vue';
-import BlocksStatic from '~/components/custom/BlocksStatic.vue';
+// import PageWrapper from '~/components/custom/PageWrapper.vue';
+// import BlocksStatic from '~/components/custom/BlocksStatic.vue';
 import ToastMessage from '~/modules/toast/ToastMessage.vue';
 
 export default {
   name: 'CustomizeLayout',
   components: {
-    PageWrapper,
-    BlocksStatic,
+    // PageWrapper,
+    // BlocksStatic,
     ToastMessage,
   },
   mounted: function() {

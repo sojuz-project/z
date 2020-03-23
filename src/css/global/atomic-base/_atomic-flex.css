@@ -1,0 +1,100 @@
+/** FLEX */
+
+/**
+  @atom .flex
+*/
+.flex,
+.is-style-f-col-2,
+.is-style-f-col-3,
+.is-style-f-col-4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/**
+  @atom .fcol
+*/
+.fcol{
+  flex-direction: column;
+}
+.f-childs-1 > * {
+  flex: 1;
+  overflow: hidden;
+}
+.f-childs-100 > *{
+  flex: 0 0 100%;
+}
+/**
+  @atom .f-col-2
+*/
+.is-style-f-col-2 > *,
+.f-col-2 > * {
+  width: calc(50% - 1.3vw);
+  flex: 0 0 calc(50% - 1.3vw);
+  margin-bottom: 2vw;
+}
+/**
+  @atom .f-col-3
+*/
+.is-style-f-col-3 > *,
+.f-col-3 > * {
+  width: calc(33% - 1.3vw);
+  flex: 0 0 calc(33% - 1.3vw);
+  margin-bottom: 2vw;
+}
+/**
+  @atom .f-col-4
+*/
+.is-style-f-col-4 > *,
+.f-col-4 > * {
+  width: calc(25% - 1.3vw);
+  flex: 0 0 calc(25% - 1.3vw);
+  margin-bottom: 2vw;
+}
+.f-self-2{
+  flex: 0 0 calc(50% - 1.3vw);
+}
+.f-self-3{
+  flex: 0 0 calc(33% - 1.3vw);
+}
+.f-self-4{
+  flex: 0 0 calc(25% - 1.3vw);
+}
+/**
+  @atom .f-right
+*/
+.f-right{
+  justify-content: flex-end;
+}
+/**
+  @atom .f-center
+*/
+.f-center{
+  justify-content: center;
+}
+/**
+  @atom .f-around
+*/
+.f-around{
+  justify-content: space-around;
+}
+/**
+  @atom f-between
+*/
+.f-between{
+  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  .is-style-f-col-3 > *,
+  .f-col-3 > * {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 2vw;
+  }
+  .is-style-f-col-4 > *,
+  .f-col-4 > * {
+    width: calc(50% - 1.3vw);
+    flex: 0 0 calc(50% - 1.3vw);
+    margin-bottom: 2vw;
+  }
+}

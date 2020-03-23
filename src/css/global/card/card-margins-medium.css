@@ -1,0 +1,11 @@
+.card{
+  margin:0;
+}
+.block.has-3-columns > *{
+  flex: 0 0 calc(33% - 19px);
+  margin-bottom:39px;
+}
+.block.has-2-columns > * {
+  flex: 0 0 calc(33% - 19px);
+  margin-bottom:39px;
+} 

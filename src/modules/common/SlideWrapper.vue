@@ -1,9 +1,13 @@
 <template>
-  <div v-swiper:mySwiper="swiperOption" class="swiper">
-    <div class="swiper-wrapper">
-      <slot></slot>
+  <no-ssr>
+    <div v-swiper:mySwiper="swiperOption" :class="['block', 'swiper']">
+      <div class="swiper-wrapper">
+        <slot></slot>
+      </div>
+      <div class="swiper-button-prev">< prev</div>
+      <div class="swiper-button-next">next ></div>
     </div>
-  </div>
+  </no-ssr>
 </template>
 <script>
 /** add items swipe-slide class */
@@ -14,22 +18,39 @@ if (process.browser) {
 }
 export default {
   props: {
-    attrs: {
+    blockAttrs: {
       type: Object,
       default: () => ({}),
+    },
+    innerBlocks: {
+      type: Array,
+      default: () => [],
+    },
+    innerHtml: {
+      type: String,
+      default: '',
     },
   },
   data: function() {
     return {
       swiperOption: {
         loop: false,
+
+        // width: 800,
         // loopedSlides: this.attrs.sectionColumns,
-        slidesPerView: parseInt(this.attrs.sectionColumns) || 1,
+        slidesPerView: parseInt(this.blockAttrs && this.blockAttrs.sectionColumns) || 1,
         centeredSlides: false,
-        spaceBetween: 0,
+        spaceBetween: parseInt(this.blockAttrs && this.blockAttrs.spaceBetween) || 0,
+        updateOnWindowResize: true,
         pagination: {
           el: '.swiper-pagination',
           dynamicBullets: true,
+        },
+        allowSlideNext: true,
+        // loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         // on: {
         //   slideChange() {
@@ -49,6 +70,9 @@ export default {
   position: relative;
   overflow: hidden;
   height: 100%;
+  min-width: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 .swiper-wrapper {
   display: flex;

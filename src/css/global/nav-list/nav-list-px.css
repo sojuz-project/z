@@ -1,3 +1,7 @@
+.BlocksMenu{
+  width:100%;
+}
+
 /** 
   Horizontal/Vertical Lists
 */
@@ -81,6 +85,10 @@
 /** ul.nav-h-list > li */
 .nav-h-list > *:last-of-type{
   border-right: none;
+
+}
+.nav-h-list > *:last-of-type > a{
+  padding-right:0;
 }
 
 
@@ -168,4 +176,10 @@ nav svg{
    }
 }
 
+.nuxt-link-active{
+  background-color: #00000066;
+}
+.logo .nuxt-link-active, .close.nuxt-link-active{
+  background-color: initial ;
+}
 

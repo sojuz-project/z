@@ -64,7 +64,6 @@ export default {
        *  always app init from components/Page.vue
        */
       const PageComponent = resolve(__dirname, 'components/Page.vue');
-      const Profile = resolve(__dirname, 'components/Profile.vue');
       /*
        *  to show any routing content with popup
        */
@@ -81,12 +80,6 @@ export default {
            *  TODO - rename 'profile' route as 'panel'
            */
           {
-            name: 'profile',
-            path: '/profile/:slug',
-            component: Profile,
-            children: modalRoute,
-          },
-          {
             name: 'home',
             path: '/',
             component: PageComponent,
@@ -95,6 +88,12 @@ export default {
           /*
            *  show any post by slug
            */
+          {
+            name: 'search',
+            path: '/search/:slug',
+            component: PageComponent,
+            children: modalRoute,
+          },
           {
             name: 'page',
             path: '/:slug',
@@ -113,24 +112,24 @@ export default {
           /*
            *  filters
            */
-          {
-            name: 'query_paginate',
-            path: '/:slug/page/:page',
-            component: PageComponent,
-            children: modalRoute,
-          },
+          // {
+          //   name: 'query_paginate',
+          //   path: '/:slug/page/:page',
+          //   component: PageComponent,
+          //   children: modalRoute,
+          // },
           {
             name: 'query_filter',
             path: '/:slug/filter/:term_slug',
             component: PageComponent,
             children: modalRoute,
           },
-          {
-            name: 'query_filter_paginate',
-            path: '/:slug/filter/:term_slug/page/:page',
-            component: PageComponent,
-            children: modalRoute,
-          },
+          // {
+          //   name: 'query_filter_paginate',
+          //   path: '/:slug/filter/:term_slug/page/:page',
+          //   component: PageComponent,
+          //   children: modalRoute,
+          // },
         ]
       );
     },

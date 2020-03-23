@@ -1,12 +1,12 @@
 .coreparagraph{
-  padding-bottom: 10px;
+  
 }
 p.has-background{
-  padding: 10px;
+  
 }
 
 @media only screen and (max-width: 768px) {
     .corecolumns .coreparagraph{
-      margin-right:15px;
+  
     }
 }

@@ -1,16 +1,32 @@
 <template>
   <transition appear name="fade">
     <div id="modal">
+      <ToastMessage />
       <div v-if="modalBlocks" class="modal-content">
+        
         <!-- <component :is="$route.params.modalSlug"></component> -->
         <inner-block v-for="(block, i) in modalBlocks.blocks" :key="i" :blocks="block" />
-        <nuxt-link :to="{ path: $route.path.split('/modal')[0] || '/' }" class="close">close</nuxt-link>
+        <nuxt-link :to="{ path: $route.path.split('/modal')[0] || '/' }" class="close"><Icon
+          :blockAttrs="{
+            name: 'close',
+            size: 40,
+            stroke: isBookmarked ? '#fff' : '#000',
+            strokeWeight: 1,
+            fill: isBookmarked ? '#5ea52f' : '#fff',
+            shapeRendering: 'crispEdges',
+          }"
+        /></nuxt-link>
       </div>
     </div>
-  </transition> 
+  </transition>
 </template>
 <script>
+import ToastMessage from '~/modules/toast/ToastMessage.vue';
 export default {
+  components: {
+    ToastMessage,
+    Icon: () => import('~/components/icons/Icon'),
+  },
   // transition: 'smooth',
   props: {
     attrs: {
@@ -41,30 +57,31 @@ export default {
 }
 #modal .close {
   position: absolute;
-  right: 2vw;
-  top: 2vw;
+  right: 10px;
+  top: 10px;
 }
 .modal-content {
-  overflow-y: auto;
-  z-index: 500;
-  max-height: calc(100% - 60px);
-  max-width: calc(100% - 20px);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  box-sizing: unset;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
   background-color: #fff;
-  padding: 4vw;
-  min-height: 35vw;
-  min-width: 40vw;
+  width: 768px;
+  max-height: calc(100vh - 100px);
+  margin: auto;
+  transform: translate3d(0, 40px, 0);
+  padding: 30px 20px 40px;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 768px) {
   .modal-content {
-    min-height: 90vh;
     min-width: 90vw;
-    max-height: 97vh;
-    max-width: 97vw;
+    min-height: 90vh;
+    max-width: 90vw;
+    max-height: 90vh;
+    top: 5vh;
+    transform: translate3d(0, 0, 0);
   }
 }
 

@@ -1,7 +1,10 @@
 <template>
   <div v-if="attachments && attachments.length" :class="wrapperClass">
     <figure v-for="(srcset, i) in attachments" :key="i" class="blocks-gallery-item">
-      <img v-if="srcset" :data-srcset="srcset" :alt="`gallery-${i}`" class="lazyload" />
+      <nuxt-link v-if="blockAttrs.url" :to="blockAttrs.url">
+        <img v-if="srcset" :data-srcset="srcset" :alt="`gallery-${i}`" class="lazyload" />
+      </nuxt-link>
+      <img v-if="!blockAttrs.url && srcset" :data-srcset="srcset" :alt="`gallery-${i}`" class="lazyload" />
     </figure>
   </div>
 </template>
@@ -33,7 +36,10 @@ export default {
       query: require('./thumbnailElasticMulti.gql'),
       variables() {
         return {
-          ids: this.blockAttrs.ids.map(Number),
+          ids:
+            typeof this.blockAttrs.ids === 'string' || this.blockAttrs.ids instanceof String
+              ? this.blockAttrs.ids.split(',').map(Number)
+              : this.blockAttrs.ids.map(Number),
         };
       },
       skip() {

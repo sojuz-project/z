@@ -1,18 +1,19 @@
 <template>
-  <form v-if="form && form.fields" @submit.prevent="submit()">
-    <h1>{{ form.title }}</h1>
-    <!-- <pre>{{ form }}</pre> -->
-    <inner-block v-for="(block, i) in form.fields" :key="i" :blocks="block" />
-    <div class="button wp-block-button aligncenter">
-      <button
-        :disabled="loading"
-        class="wp-block-button has-text-color has-white-color has-background has-dark-gray-background-color"
-        type="submit"
-      >
-        Send
-      </button>
-    </div>
-  </form>
+  <div
+    v-if="loginGuard"
+    :class="['group', blockAttrs.className, blockAttrs.align ? `align-${blockAttrs.align}` : 'align-default']"
+  >
+    <!-- <pre>{{ form.fields }}</pre> -->
+    <form v-if="form && form.fields" @submit.prevent="submit()">
+      <h2 v-if="blockAttrs.title" class="form-title">{{ form.title }}</h2>
+      <inner-block v-for="(block, i) in form.fields" :key="i" :blocks="block" />
+      <div class="block wp-block-button aligncenter corebutton">
+        <button :disabled="loading" class="has-text-color has-white-color has-default-background-color" type="submit">
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -22,12 +23,7 @@ export default {
     return {
       formData: () => this.updatedForm,
       updateData: this.updateData,
-    };
-  },
-  data() {
-    return {
-      updatedForm: {},
-      loading: false,
+      getConditional: this.getConditionalShow,
     };
   },
   props: {
@@ -40,46 +36,111 @@ export default {
       default: '',
     },
   },
-  // computed: {
-  //   provideData() {
-  //     return {};
-  //   },
-  // },
-  methods: {
-    updateData(value, fieldName) {
-      this.updatedForm = { ...this.updatedForm, [fieldName]: value };
+  data() {
+    return {
+      fieldKeyNameMap: {},
+      updatedForm: this.parseInitialFormdata(),
+      loading: false,
+    };
+  },
+  computed: {
+    loginGuard() {
+      let out = true;
+      if (this.blockAttrs.loginOnly) {
+        out = this.blockAttrs.loginOnly == this.isLogged ? true : false;
+      }
+      if (this.blockAttrs.logoutOnly) {
+        out = this.blockAttrs.logoutOnly != this.isLogged ? true : false;
+      }
+      return out;
     },
-    makeFields(fields) {
-      //  {
-      //   "key": "field_5e2ad15ecd49c",
-      //   "label": "email",
-      //   "name": "email",
-      //   "type": "email",
-      //   "instructions": "",
-      //   "required": 1,
-      //   "conditional_logic": 0,
-      //   "wrapper": {
-      //     "width": "",
-      //     "class": "",
-      //     "id": ""
-      //   },
-      //   "default_value": "",
-      //   "placeholder": "",
-      //   "prepend": "",
-      //   "append": ""
-      // };
+  },
+  methods: {
+    filterReadOnly(formValues) {
+      return this.form.fields
+        .filter((field) => Boolean(field.attrs.readonly))
+        .reduce((acc, curr) => {
+          const { [curr.attrs.name]: readOnly, ...withoutReadOnly } = acc;
+          return withoutReadOnly;
+        }, formValues);
+    },
+    // pass formValues to make this function base on reactive data inside computed - to be also reactive on change any form value
+    getConditionalShow(conditionals = [[]], formValues) {
+      const operation = {
+        '!=': (v1, v2) => v1 != v2,
+        '==': (v1, v2) => v1 == v2,
+      };
 
-      return fields.map((attrs) => ({
-        blockName: ['text', 'select'].includes(attrs.type) ? `sojuzacf${attrs.type}` : 'sojuzacftext',
-        attrs,
-      }));
+      return conditionals.some((
+        conditionalOrs // conditional ors
+      ) =>
+        conditionalOrs.every(
+          (
+            conditional // conditional ands
+          ) =>
+            operation[conditional.operator] && // TODO - currenlty we dont handle all possible operators
+            operation[conditional.operator](formValues[this.fieldKeyNameMap[conditional.field]], conditional.value)
+        )
+      );
+    },
+    parseInitialFormdata() {
+      return this.$route.query.term
+        ? {
+            ...this.$route.query,
+            term: this.$route.query.term.split(',').reduce((acc, curr) => {
+              const [k, v] = curr.split('|');
+              acc[k] = v;
+              return acc;
+            }, {}),
+          }
+        : this.$route.query;
+    },
+    updateData(value, fieldName, fieldNameInner) {
+      this.updatedForm = {
+        ...this.updatedForm,
+        [fieldName]: fieldNameInner ? { ...this.updatedForm[fieldName], [fieldNameInner]: value } : value,
+      };
+    },
+    makeFields(fields, name /* name for group 0 nested names*/) {
+      return fields
+        .filter((field) => !Boolean(field.hidden))
+        .map((attrs) => ({
+          blockName: [
+            'text',
+            'textarea',
+            'select',
+            'group',
+            'date_time_picker',
+            'taxonomy',
+            'true_false',
+            'repeater',
+            'search',
+          ].includes(attrs.type)
+            ? `sojuzacf${attrs.type}`
+            : 'sojuzacftext',
+          attrs: { ...attrs, form: this.blockAttrs, ...(name && { name: `${name}_${attrs.name}` }) },
+          innerBlocks: attrs.sub_fields ? this.makeFields(attrs.sub_fields, attrs.name) : [],
+        }));
     },
     // submit() {
     //   this.$router.push({ query: this.updatedForm });
     // },
     async submit() {
-      if (!this.form.active) {
-        // this.$router.push({ query: this.updatedForm });
+      const formValuesToSend = this.updatedForm.term
+        ? {
+            ...this.updatedForm,
+            term: Object.entries(this.updatedForm.term)
+              .map(([k, v]) => `${k}|${v}`)
+              .join(','),
+          }
+        : this.updatedForm;
+
+      if (this.form.action === 'false') {
+        const query = this.filterReadOnly(formValuesToSend);
+        this.$router.push({
+          query,
+          path: this.blockAttrs.endpoint ? `/search/${this.blockAttrs.endpoint}` : '/search',
+        });
         return;
       }
 
@@ -90,19 +151,23 @@ export default {
           mutation: require('./formSubmit.gql'),
           variables: {
             action: this.form.action,
-            fields: JSON.stringify(this.updatedForm),
+            fields: JSON.stringify(formValuesToSend),
           },
         });
 
-        if (errors) {
-          throw errors;
-        }
-
         if (['login', 'register'].includes(data.form.cb)) {
           this.$loginHelpers.onLogin(data.form.data.token);
+        } else {
+          this.$updateToast({ msg: data.form.data.messages ?data.form.data.messages[0]:  data.form.messages[0], type: 'success' });
+        }
+
+        if (this.blockAttrs.endpoint) {
+          this.$router.push({
+            path: `/${this.blockAttrs.endpoint}`,
+          });
         }
       } catch (e) {
-        // this.$updateToast({ msg: e, type: 'error' });
+        this.$updateToast({ msg: e.message, type: 'error' });
       } finally {
         // this.$updateToast({ msg: 'asdasdsad', type: 'error' });
         // TODO maybe clean form?
@@ -110,13 +175,22 @@ export default {
       }
     },
   },
+
   apollo: {
+    isLogged: {
+      query: require('~/modules/login/isLogged.gql'),
+    },
     form: {
       query: require('./formGet.gql'),
-      // TODO: hardcoded
-      variables: { name: 'group_5e346c6a0dd36' },
-      // variables: { name: 'group_5e2ad1559d459' },
+      variables() {
+        return { name: this.blockAttrs.form };
+      },
       update({ form = { fields: [] } }) {
+        this.fieldKeyNameMap = (form.fields || []).reduce((acc, curr) => {
+          acc[curr.key] = curr.name;
+          return acc;
+        }, {});
+
         return {
           ...form,
           fields: this.makeFields(form.fields || []),

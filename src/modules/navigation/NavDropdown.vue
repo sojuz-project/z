@@ -3,8 +3,8 @@
 @module: Navigation
 @submodule: Navigation dropdown item
 @description: Navigation dropdown item
-@dependencies: 
-  - Icon 
+@dependencies:
+  - Icon
   - isLogged
 @attrs:
   -
@@ -17,7 +17,7 @@
     description: <p>Dropdown display name </p>
     type: string
     default: null
-  - 
+  -
     name: <p>icon</p>
     description: <p>Icon properties ['name']</p>
     type: object
@@ -25,11 +25,13 @@
 
 !SOJUZ DOC -->
 <template>
-  <component :is="blockAttrs && blockAttrs.tagName ||  'li'">
+  <component :is="(blockAttrs && blockAttrs.tagName) || 'li'">
     <template v-if="show">
-      
-      <ul @click="isDropdownActive = !isDropdownActive" :class="['dropdown', 'right', { 'is-active': isDropdownActive }]">
-        <a  href="#" aria-label="expand-profile">
+      <ul
+        @click="isDropdownActive = !isDropdownActive"
+        :class="['dropdown', 'right', { 'is-active': isDropdownActive }]"
+      >
+        <a href="#" aria-label="expand-profile">
           <span v-if="blockAttrs.icon">
             <Icon
               v-if="!isDropdownActive"
@@ -51,12 +53,11 @@
             {{ blockAttrs.title }}
           </span>
         </a>
-        <transition  name="fade"><div v-if="isDropdownActive" class="dropdown-mask"></div></transition>  
+        <transition name="fade"><div v-if="isDropdownActive" class="dropdown-mask"></div></transition>
         <ul v-if="isDropdownActive" class="nav-v-list inner-border closed nav-sub">
-            <slot></slot>
+          <slot></slot>
         </ul>
       </ul>
-      
     </template>
   </component>
 </template>
@@ -99,12 +100,11 @@ export default {
 };
 </script>
 <style scoped>
-.fade-enter-active{
+.fade-enter-active {
   transition: all 0.3s;
 }
 
-.fade-enter
- {
+.fade-enter {
   opacity: 0;
 }
 </style>

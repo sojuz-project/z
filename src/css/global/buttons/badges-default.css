@@ -1,0 +1,10 @@
+.badge{
+  display:inline-block;
+  margin:1px;
+  box-sizing: border-box;
+  width: auto;
+}
+.block.badge .wp-block-button a{
+  padding: 7px 15px;
+  font-size:smaller;
+}

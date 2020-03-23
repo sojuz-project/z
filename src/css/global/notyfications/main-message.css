@@ -8,7 +8,7 @@
   padding: .8vw;
   text-transform: uppercase;
   position: sticky;
-  top:5vw;
+  top:0;
   z-index: 10;
   cursor:pointer;
 }
@@ -44,4 +44,10 @@ filter: grayscale(30%);
 .success{
   background-color: #5ea52f;
   color:#fff;
+}
+
+#modal .main-message{
+    width: 808px;
+    margin: auto;
+    margin-top: 50px;
 }

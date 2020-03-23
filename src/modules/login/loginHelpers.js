@@ -1,5 +1,6 @@
 import Cookie from 'universal-cookie';
 import { restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client';
+import jwtDecode from 'jwt-decode';
 
 const AUTH_TOKEN_NAME = 'apollo-token';
 const COOKIE_ATTRIBUTES = {};
@@ -38,5 +39,10 @@ export default ({ app: { apolloProvider, $updateToast }, req }, inject) => {
       if (apolloClient.wsClient) restartWebsockets(apolloClient.wsClient);
     },
     getToken: (tokenName = AUTH_TOKEN_NAME) => cookies.get(tokenName),
+    getUserInfo: (tokenName = AUTH_TOKEN_NAME) => {
+      const token = cookies.get(tokenName);
+
+      return token ? jwtDecode(token) : null;
+    },
   });
 };

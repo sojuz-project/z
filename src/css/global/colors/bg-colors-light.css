@@ -1,0 +1,138 @@
+/* 
+  BG colors 
+*/
+
+/**
+  @atom .has-primary-background-color
+  @markup
+    .has-primary-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-primary-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-primary-background-color{
+  background-color: #aaaaaa;
+}
+/**
+  @atom .has-secondary-background-color
+  @markup
+    .has-secondary-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-secondary-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-secondary-background-color{
+  background-color: #757575
+}
+/**
+  @atom .has-dark-gray-background-color
+  @markup
+    .has-dark-gray-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-dark-gray-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-dark-gray-background-color{
+  background-color: #222
+}
+
+/**
+  @atom .has-light-gray-background-color
+  @markup
+    .has-light-gray-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-light-gray-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-light-gray-background-color{
+  background-color: rgb(221, 221, 221);
+}
+
+/**
+  @atom .has-white-background-color
+  @markup
+    .has-white-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-white-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-white-background-color{
+  background-color: #fff;
+}
+
+/**
+  @atom .has-default-background-color
+  @markup
+    .has-default-background-color is gutenberg native atom class
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="has-default-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.has-default-background-color{
+  /* background-color: inherit; */
+}
+
+
+
+
+/**
+  @atom .has-foreground-color
+  @markup
+    TODO add it - find in automattic templates (fullpage edit plugin)
+    ```
+*/
+.has-foreground-color{
+
+}
+
+/**
+  @atom a
+  @markup
+    Link mutation for this background set
+    ```
+*/
+a{
+  color: #000
+}

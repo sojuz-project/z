@@ -1,0 +1,28 @@
+.sojuzgraphquery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+  
+  /*-------------------- */
+  border: 1px solid #00000020;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 3px #00000011;
+}
+
+
+.card >  .corecolumns > .corecolumn{
+  border-top: 1px solid #00000033;
+}
+
+.badge{
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 3px #0000009a;
+}

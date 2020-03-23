@@ -3,6 +3,7 @@
   <div
     :class="[
       data.class,
+      props.blockAttrs.className,
       props.blockAttrs.verticalAlignment ? 'v-align-center' : '',
       !props.blockAttrs.width ? 'columns-defalult' : null,
     ]"

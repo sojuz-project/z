@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: local('SourceSansPro-Regular'), url(../../../css/fonts/IBMPlexSans-ExtraLight.woff2) format('woff2');
+  
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: fallback;
+  src: local('SourceSansPro-Bold'), url(../../../css/fonts/IBMPlexSans-Bold.woff2) format('woff2');
+  
+}
+ /**
+  @atom body 
+*/
+body, button, input, select, textarea{
+  font-family: 'IBM Plex Sans', Arial, sans-serif;
+}

@@ -1,0 +1,22 @@
+/**
+  @atom .block, .coreimage
+*/
+main > .coreimage,
+main > .block{
+  padding-left: 8vw;
+  padding-right: 8vw;
+} 
+/**
+  @atom .block.align-wide
+*/
+.block.align-wide{
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+  
+
+
+.has-text-align-center{
+  text-align: center;
+}
+

@@ -1,17 +1,13 @@
 
 
 .coreseparator {
-    border: none;
-    border-bottom: 4px solid #000;
-    margin: 1.65em auto;
-    width: 2.25em;
     padding:0;
 }
 
 .coreseparator.is-style-wide{
   margin-left: auto;
   width: 100%;
-  border-bottom: 4px solid #000;
+  /* border-bottom: 4px solid #000; */
   padding:0;
 }
 

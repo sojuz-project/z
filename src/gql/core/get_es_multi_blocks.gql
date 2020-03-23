@@ -1,0 +1,22 @@
+query mainBlocks(
+  $header: String = "",
+  $headerExtend: String = "",
+  $body: String = "",
+  $footer: String = "") {
+  header: queryPost(post_name: $header) {
+    id: ID
+    blocks
+  }
+  headerExtended: queryPost(post_name: $headerExtend) {
+    id: ID
+    blocks
+  }
+  mainBlocks: queryPost(post_name: $body) {
+    id: ID
+    blocks
+  }
+  footer: queryPost(post_name: $footer) {
+    id: ID
+    blocks
+  }
+}

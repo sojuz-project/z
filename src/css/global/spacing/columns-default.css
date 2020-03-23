@@ -1,0 +1,15 @@
+.corecolumn > *{
+   margin-bottom:12px; 
+}
+.corecolumn .coreheading{
+   margin-bottom:12px; 
+   margin-top:30px; 
+}
+.corecolumn .coreparagraph{
+   margin-bottom:12px; 
+}
+/* reset header */
+header .corecolumn .coreheading,
+header .corecolumn .coreparagraph{
+   margin:2px 0
+}

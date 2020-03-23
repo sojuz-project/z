@@ -1,0 +1,19 @@
+/**
+  @atom .has-default-background-color
+  @modifiers .wp-block-button
+  @markup
+    .has-default-background-color for button block is dark!
+    ```
+  @example
+    <main>
+      <div class="doc-color-markers">
+        <p class="wp-block-button has-default-background-color">
+          &nbsp;
+        </p>
+      </div>
+    </main>
+    ```
+*/
+.wp-block-button.has-default-background-color{
+  background-color: #161B33;
+}

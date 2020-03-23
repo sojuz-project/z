@@ -1,22 +1,28 @@
 <template>
-  <PageWrapper>
-    <BlocksStatic tag-name="header" content-slug="header_template_slug" />
-    <ToastMessage />
+  <div>
+    <header>
+      <block-header />
+    </header>
+    <toast-message />
     <nuxt />
-    <BlocksStatic tag-name="footer" content-slug="footer_template_slug" />
-  </PageWrapper>
+    <block-footer />
+    <!-- <inner-block v-for="block in footer.blocks" :key="block.blockName" :blocks="block" /> -->
+  </div>
 </template>
 
 <script>
-import PageWrapper from '~/components/custom/PageWrapper.vue';
-import BlocksStatic from '~/components/custom/BlocksStatic.vue';
+import BlockHeader from '~/components/custom/BlockHeader.vue';
+import BlockFooter from '~/components/custom/BlockFooter.vue';
 import ToastMessage from '~/modules/toast/ToastMessage.vue';
+import gql from 'graphql-tag';
 
 export default {
   name: 'DefaultLayout',
   components: {
-    PageWrapper,
-    BlocksStatic,
+    // PageWrapper,
+    // BlocksStatic,
+    BlockHeader,
+    BlockFooter,
     ToastMessage,
   },
 };

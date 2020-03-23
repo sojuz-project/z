@@ -1,0 +1,8 @@
+.coreseparator{
+    border:0;
+    border-bottom: 4px solid #000;
+    margin: 1.65em auto;
+    width: 2.25em;
+    padding-top:30px;
+    padding-bottom:30px;
+}

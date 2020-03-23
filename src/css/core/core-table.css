@@ -1,8 +1,9 @@
-.wp-block-table{
+.wp-block-table table{
   width:100%
 }
 .wp-block-table td{
   padding:10px;
+  border-top:1px solid #00000066;
 }
 
 .wp-block-table.is-style-regular tr,

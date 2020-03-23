@@ -2,6 +2,7 @@ main .corecover{
     position: relative;
     background-size: cover; 
     background-position: center;
+    z-index:0;
 }
 
 .corecover.hasParallax{
@@ -15,7 +16,7 @@ main .corecover{
     bottom: 0;
     right: 0;
     z-index: 1;
-    max-width:100%;
+    max-width:100% !important;
     height:100%;
 }
 .corecover > *{

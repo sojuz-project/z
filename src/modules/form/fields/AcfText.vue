@@ -1,9 +1,9 @@
 <template>
-  <div :class="blockAttrs.className">
-    <label :for="blockAttrs.name">
+  <div v-if="conditionalShow" :class="[blockAttrs.className, blockAttrs.wrapper.class]">
+    <label v-if="blockAttrs.form.labels" :for="blockAttrs.name">
       {{ blockAttrs.label }}
     </label>
-
+    <!-- <pre>{{ blockAttrs }}</pre> -->
     <input
       :type="blockAttrs.type || 'text'"
       :placeholder="blockAttrs.placeholder"
@@ -17,11 +17,18 @@
 
 <script>
 export default {
-  inject: ['formData', 'updateData'],
+  inject: ['formData', 'updateData', 'getConditional'],
   props: {
     blockAttrs: {
       type: Object,
       default: () => ({}),
+    },
+  },
+  computed: {
+    conditionalShow() {
+      return (
+        !this.blockAttrs.conditional_logic || this.getConditional(this.blockAttrs.conditional_logic, this.formData())
+      );
     },
   },
 };

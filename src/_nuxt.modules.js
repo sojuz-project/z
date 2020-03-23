@@ -31,9 +31,11 @@ export const modules = {
   query: () => import(/* webpackChunkName: "base" */ '~/components/custom/Query'),
   ChildPost: () => import(/* webpackChunkName: "crearsy" */ '~/components/custom/ChildPost'),
 
+  FullCalendar: () => import('~/modules/calendar/FullCalendar'),
+
   /* NAVIGATION */
   BlocksMenu: () => import('~/modules/navigation/BlocksMenu'),
-  MetaList: () => import('~/components/postCards/MetaList'),
+  // MetaList: () => import('~/components/postCards/MetaList'),
   NavCategory: () => import('~/modules/navigation/NavCategory'),
   Pagination: () => import('~/modules/pagination/Pagination'),
   NavItem: () => import('~/modules/navigation/NavMenuItem'),
@@ -55,7 +57,6 @@ export const modules = {
   // DropdownCategory: () => import('~/modules/forms/DropdownCategory'),
 
   /* PROFILE */
-  Profile: () => import(/* webpackChunkName: "profile" */ '~/modules/forms/Profile'),
   BillingForm: () => import(/* webpackChunkName: "profile" */ '~/modules/forms/BillingForm.vue'),
   Login: () => import(/* webpackChunkName: "login" */ '~/modules/forms/Login'),
   Register: () => import(/* webpackChunkName: "login" */ '~/modules/forms/Register'),

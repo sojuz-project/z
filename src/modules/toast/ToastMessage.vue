@@ -24,18 +24,18 @@ export default {
     close() {
       this.$updateToast({ msg: '' });
     },
-    toastTimeout() {
-      if (this.timeout) {
-        clearTimeout(this.timeout);
-      }
-      this.timeout = setTimeout(this.close, 3000);
-    },
+    // toastTimeout() {
+    //   if (this.timeout) {
+    //     clearTimeout(this.timeout);
+    //   }
+    //   this.timeout = setTimeout(this.close, 30000000000000);
+    // },
   },
   apollo: {
     toastMessage: {
       query: require('./getToast.gql'),
       update({ toastMessage, ...rest }) {
-        this.toastTimeout();
+        // this.toastTimeout();
         return JSON.parse(toastMessage);
       },
     },

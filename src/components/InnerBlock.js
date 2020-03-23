@@ -32,9 +32,9 @@ export default {
       ? attrs.tagName
       : initialBlockName.replace(/[\/-]/g, '');
 
-    // if (blockName === 'sojuzacfform') {
-    //   console.log(blockName, attrs, blockAttrs);
-    // }
+    if (blockName === 'sojuzacfgroup') {
+      console.log(blockName, attrs, innerBlocks);
+    }
 
     const BlockComponent = modules[blockName];
 

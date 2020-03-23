@@ -1,5 +1,13 @@
 <template functional>
-  <div :class="[data.class, props.blockAttrs.className, `align-${props.blockAttrs.align || 'default'}`]">
+  <div
+    :class="[
+      data.class,
+      props.blockAttrs.className,
+      `has-${props.blockAttrs.backgroundColor || 'default'}-background-color`,
+      ,
+      `align-${props.blockAttrs.align || 'default'}`,
+    ]"
+  >
     <slot />
   </div>
 </template>
@@ -12,10 +20,6 @@ export default {
       default: () => ({}),
     },
     innerHtml: {
-      type: String,
-      default: '',
-    },
-    className: {
       type: String,
       default: '',
     },

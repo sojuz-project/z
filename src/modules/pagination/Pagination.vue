@@ -1,7 +1,7 @@
 <template>
-  <ul v-if="query" class="pagination">
-    <li v-for="page in query" :key="page">
-      <nuxt-link :to="{ name: 'query_paginate', params: { ...$route.params, page: perPage(page) } }" no-prefetch>
+  <ul class="pagination">
+    <li v-for="page in count" :key="page">
+      <nuxt-link :to="{ query: { ...$route.query, page: getPage(page) } }" no-prefetch>
         {{ page }}
       </nuxt-link>
     </li>
@@ -11,26 +11,28 @@
 <script>
 export default {
   props: {
-    blockAttrs: {
-      type: Object,
-      default: () => ({}),
+    pages: {
+      type: Number,
+      default: 1,
+    },
+    perPage: {
+      type: Number,
+      default: 12,
+    },
+  },
+  computed: {
+    count() {
+      return Math.ceil(this.pages / this.perPage);
     },
   },
   methods: {
-    perPage(page) {
-      return page * 12;
-    },
-  },
-  apollo: {
-    query: {
-      query: require('./pagination.gql'),
-      update({ QlPagination }) {
-        return Math.floor(QlPagination / 12);
-      },
+    getPage(page) {
+      return (page - 1) * this.perPage;
     },
   },
 };
 </script>
+
 <style>
 .pagination {
   display: flex;

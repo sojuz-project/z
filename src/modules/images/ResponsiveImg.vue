@@ -43,12 +43,14 @@ export default {
   },
   computed: {
     srcset() {
-      return this.width !== null && this.attachments ? this.generateSrcset(this.attachments, this.width) : [];
+      return this.attachments ? this.generateSrcset(this.attachments, this.width) : [];
+
+      // return this.width !== null && this.attachments ? this.generateSrcset(this.attachments, this.width) : [];
     },
     color() {
       return {
         backgroundColor: this.blockAttrs.colors && this.blockAttrs.colors[0],
-        // minHeight: '12vw',
+        minHeight: this.blockAttrs.figureMinHeight ? this.blockAttrs.figureMinHeight : null,
       };
     },
   },
@@ -83,7 +85,7 @@ export default {
     generateSrcset(data = [], imageWidth) {
       return data.length > 0
         ? data
-            .filter(({ width }) => Math.abs(width - imageWidth) < 400)
+            // .filter(({ width }) => Math.abs(width - imageWidth) < 400)
             .map(({ file, width }) => `${this.location}${file} ${width}w`)
         : this.fullLocation;
     },

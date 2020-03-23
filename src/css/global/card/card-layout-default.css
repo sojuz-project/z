@@ -1,0 +1,10 @@
+.sojuzgraphquery.has-query{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: inherit;
+}

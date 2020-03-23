@@ -11,7 +11,7 @@
     <nuxt-link
       v-if="!blockAttrs.hyperLink"
       :class="[
-        blockAttrs.textColor ? `has-${blockAttrs.textColor}-color` : 'has-withe-color',
+        blockAttrs.textColor ? `has-${blockAttrs.textColor}-color` : 'has-white-color',
         blockAttrs.backgroundColor
           ? `has-${blockAttrs.backgroundColor}-background-color`
           : 'has-default-background-color',
